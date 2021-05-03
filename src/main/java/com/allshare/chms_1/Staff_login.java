@@ -158,7 +158,7 @@ public class Staff_login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Staff_dash sd = new Staff_dash();
         sd.setVisible(true);
-        sd.name_disp.setText("xyz");
+        //sd.name_disp.setText("xyz");
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

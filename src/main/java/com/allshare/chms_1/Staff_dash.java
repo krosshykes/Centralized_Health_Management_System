@@ -67,8 +67,26 @@ public class Staff_dash extends javax.swing.JFrame {
                 profileCard = new javax.swing.JPanel();
                 jLabel4 = new javax.swing.JLabel();
                 jLabel5 = new javax.swing.JLabel();
-                name_disp = new javax.swing.JTextField();
-                jTextField2 = new javax.swing.JTextField();
+                jLabel1 = new javax.swing.JLabel();
+                jLabel6 = new javax.swing.JLabel();
+                jLabel7 = new javax.swing.JLabel();
+                jLabel8 = new javax.swing.JLabel();
+                jLabel9 = new javax.swing.JLabel();
+                jLabel10 = new javax.swing.JLabel();
+                jLabel11 = new javax.swing.JLabel();
+                jLabel12 = new javax.swing.JLabel();
+                jLabel13 = new javax.swing.JLabel();
+                jLabel14 = new javax.swing.JLabel();
+                jLabel15 = new javax.swing.JLabel();
+                jLabel16 = new javax.swing.JLabel();
+                jLabel17 = new javax.swing.JLabel();
+                jScrollPane2 = new javax.swing.JScrollPane();
+                jTextArea1 = new javax.swing.JTextArea();
+                jLabel19 = new javax.swing.JLabel();
+                jLabel18 = new javax.swing.JLabel();
+                jLabel20 = new javax.swing.JLabel();
+                jLabel38 = new javax.swing.JLabel();
+                jLabel39 = new javax.swing.JLabel();
                 registerCard = new javax.swing.JScrollPane();
                 regCardPnl = new javax.swing.JPanel();
                 jLabel21 = new javax.swing.JLabel();
@@ -329,43 +347,165 @@ public class Staff_dash extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel5.setText("Designation");
+        jLabel5.setText("Date of Birth");
 
-        name_disp.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        name_disp.setText("Name to be displayed");
-        name_disp.setEnabled(false);
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("User ID");
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jTextField2.setText("designation to be displayed");
-        jTextField2.setEnabled(false);
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel6.setText("Aadhar Number");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel7.setText("To Be Displayed");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel8.setText("To Be Displayed");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel9.setText("To Be Displayed");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel10.setText("To Be Displayed");
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel11.setText("Date of Joining");
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel12.setText("To Be Displayed");
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel13.setText("City");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel14.setText("To Be Displayed");
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel15.setText("State");
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel16.setText("To Be Displayed");
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel17.setText("Address");
+        jLabel17.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel19.setText("Mobile");
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel18.setText("To Be Displayed");
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("View Profile");
+        jLabel20.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 102, 255)));
+
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel38.setText("Designation");
+
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel39.setText("To Be Displayed");
 
         javax.swing.GroupLayout profileCardLayout = new javax.swing.GroupLayout(profileCard);
         profileCard.setLayout(profileCardLayout);
         profileCardLayout.setHorizontalGroup(
             profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(profileCardLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addContainerGap()
                 .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4))
-                .addGap(88, 88, 88)
-                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
-                    .addComponent(name_disp))
-                .addContainerGap(75, Short.MAX_VALUE))
+                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         profileCardLayout.setVerticalGroup(
             profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(profileCardLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
                 .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(name_disp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                    .addComponent(jLabel9))
+                .addGap(18, 18, 18)
                 .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(737, Short.MAX_VALUE))
+                    .addComponent(jLabel10))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel18))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel39))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
 
         pnlCards.add(profileCard, "profileCard");
@@ -840,7 +980,19 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -859,16 +1011,23 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JList<String> list;
@@ -876,7 +1035,6 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.JPopupMenu menu;
     private javax.swing.JTextField mobile1;
     private javax.swing.JTextField name1;
-    public javax.swing.JTextField name_disp;
     private javax.swing.JRadioButton noRadio1;
     private javax.swing.JTextField occupation1;
     private javax.swing.JPanel panel;
