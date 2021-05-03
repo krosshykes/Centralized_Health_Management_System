@@ -47,6 +47,11 @@ public class Admin_login extends javax.swing.JFrame {
                 usernameActionPerformed(evt);
             }
         });
+        username.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                usernameKeyPressed(evt);
+            }
+        });
 
         loginBtn.setBackground(new java.awt.Color(0, 102, 255));
         loginBtn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -58,11 +63,16 @@ public class Admin_login extends javax.swing.JFrame {
         });
 
         password.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        password.setText("Password");
+        password.setText("Passw0rd!");
         password.setToolTipText("Enter Password to Login");
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
+            }
+        });
+        password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordKeyPressed(evt);
             }
         });
 
@@ -141,6 +151,21 @@ public class Admin_login extends javax.swing.JFrame {
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordActionPerformed
+boolean usernameflag=false;
+boolean passwordflag=false;
+    private void usernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameKeyPressed
+        if(!usernameflag){
+            username.setText("");
+            usernameflag=true;
+        }
+    }//GEN-LAST:event_usernameKeyPressed
+
+    private void passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyPressed
+        if(!passwordflag){
+            password.setText("");
+            passwordflag=true;
+        }
+    }//GEN-LAST:event_passwordKeyPressed
 
     /**
      * @param args the command line arguments

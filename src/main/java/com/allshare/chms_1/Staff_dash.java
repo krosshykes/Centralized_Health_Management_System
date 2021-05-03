@@ -4,16 +4,20 @@
  * and open the template in the editor.
  */
 package com.allshare.chms_1;
+
 import java.awt.*;
 import javax.swing.*;
 import mdlaf.MaterialLookAndFeel;
+
 /**
  *
  * @author coolb
  */
 public class Staff_dash extends javax.swing.JFrame {
+
     CardLayout cardLayout;
     private final DefaultListModel mod;
+
     /**
      * Creates new form Staff_dash
      */
@@ -63,7 +67,7 @@ public class Staff_dash extends javax.swing.JFrame {
                 profileCard = new javax.swing.JPanel();
                 jLabel4 = new javax.swing.JLabel();
                 jLabel5 = new javax.swing.JLabel();
-                jTextField1 = new javax.swing.JTextField();
+                name_disp = new javax.swing.JTextField();
                 jTextField2 = new javax.swing.JTextField();
                 registerCard = new javax.swing.JScrollPane();
                 regCardPnl = new javax.swing.JPanel();
@@ -327,9 +331,9 @@ public class Staff_dash extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel5.setText("Designation");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jTextField1.setText("Name to be displayed");
-        jTextField1.setEnabled(false);
+        name_disp.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        name_disp.setText("Name to be displayed");
+        name_disp.setEnabled(false);
 
         jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jTextField2.setText("designation to be displayed");
@@ -347,7 +351,7 @@ public class Staff_dash extends javax.swing.JFrame {
                 .addGap(88, 88, 88)
                 .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(name_disp))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         profileCardLayout.setVerticalGroup(
@@ -356,7 +360,7 @@ public class Staff_dash extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(name_disp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -766,7 +770,7 @@ public class Staff_dash extends javax.swing.JFrame {
     private void srchFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_srchFieldFocusLost
 
     }//GEN-LAST:event_srchFieldFocusLost
-boolean flag = false;
+    boolean flag = false;
     private void srchFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_srchFieldKeyPressed
 
         if (!flag) {
@@ -809,7 +813,7 @@ boolean flag = false;
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        MaterialLookAndFeel lf=new MaterialLookAndFeel();
+        MaterialLookAndFeel lf = new MaterialLookAndFeel();
         UIManager.setLookAndFeel(lf);
         //</editor-fold>
 
@@ -862,7 +866,6 @@ boolean flag = false;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField2;
@@ -873,6 +876,7 @@ boolean flag = false;
     private javax.swing.JPopupMenu menu;
     private javax.swing.JTextField mobile1;
     private javax.swing.JTextField name1;
+    public javax.swing.JTextField name_disp;
     private javax.swing.JRadioButton noRadio1;
     private javax.swing.JTextField occupation1;
     private javax.swing.JPanel panel;
