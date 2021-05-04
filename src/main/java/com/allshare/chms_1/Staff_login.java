@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package com.allshare.chms_1;
-
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author coolb
@@ -156,10 +159,89 @@ public class Staff_login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Staff_dash sd = new Staff_dash();
-        sd.setVisible(true);
-        //sd.name_disp.setText("xyz");
-        this.dispose();
+        Connection mycon = null;
+        Statement stmnt = null;
+        ResultSet myrs = null;
+        Statement stmnt2 = null;
+        ResultSet myrs2 = null;
+        try {
+            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "Asif@123");
+            stmnt = mycon.createStatement();
+            String var = username.getText().toString();
+            String query = "Select * from users where user_name = \"" + var + "\"";
+            stmnt2 = mycon.createStatement();
+
+            String name_to_display;
+            String designation_to_display;
+            int user_id;
+            long aadhar;
+            String dob;
+            String doj;
+            String city;
+            String state;
+            String address;
+            long mobile;
+
+            myrs = stmnt.executeQuery(query);
+            boolean username_exists = false;
+            
+            while (myrs.next()) {
+                username_exists = true;
+                String user_password = myrs.getString("password");
+                user_id = myrs.getInt("user_id");
+                String entered_password = password.getText().toString();
+                if (user_password.equals(entered_password)) {
+                    myrs2 = stmnt2.executeQuery("select * from staff_details where user_id = \"" + user_id + "\"");
+                    Staff_dash sd = new Staff_dash();
+                    while (myrs2.next()) {
+                        
+                        name_to_display = myrs2.getString("emp_name");
+                        designation_to_display = myrs2.getString("designation");
+                        aadhar = myrs2.getLong("aadhar_number");
+                        dob = myrs2.getString("emp_dob");
+                        doj = myrs2.getString("emp_doj");
+                        city = myrs2.getString("emp_city");
+                        state = myrs2.getString("emp_state");
+                        address = myrs2.getString("emp_address");
+                        mobile = myrs2.getLong("emp_mobile");
+                        
+                        
+                        sd.name_displayed.setText(name_to_display);
+                        sd.designation.setText(designation_to_display);
+                        
+                        
+                        sd.setVisible(true);
+                        this.dispose();
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "wrong password", "Dialog", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            if (!username_exists) {
+                JOptionPane.showMessageDialog(this, "user name does not exist", "Dialog", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        } finally {
+            if (myrs != null) {
+                try {
+                    myrs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (stmnt != null) {
+                try {
+                    stmnt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+//        Staff_dash sd = new Staff_dash();
+//        sd.setVisible(true);
+//        sd.name_disp.setText("xyz");
+//        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
