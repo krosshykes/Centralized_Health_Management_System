@@ -5,6 +5,11 @@
  */
 package com.allshare.chms_1;
 
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author coolb
@@ -156,10 +161,68 @@ public class Staff_login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Staff_dash sd = new Staff_dash();
-        sd.setVisible(true);
-        //sd.name_disp.setText("xyz");
-        this.dispose();
+        Connection mycon = null;
+        Statement stmnt = null;
+        ResultSet myrs = null;
+        Statement stmnt2 = null;
+        ResultSet myrs2 = null;
+        try {
+            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "MyNewPass");
+            stmnt = mycon.createStatement();
+            String var = username.getText().toString();
+            String query = "Select * from users where user_name = \"" + var + "\"";
+            stmnt2 = mycon.createStatement();
+            String name_to_display;
+            String designation_to_display;
+            myrs = stmnt.executeQuery(query);
+            boolean username_exists = false;
+            int user_id;
+            while (myrs.next()) {
+                username_exists = true;
+                String user_password = myrs.getString("password");
+                user_id = myrs.getInt("user_id");
+                String entered_password = password.getText().toString();
+                if (user_password.equals(entered_password)) {
+                    myrs2 = stmnt2.executeQuery("select * from staff_details where user_id = \"" + user_id + "\"");
+                    Staff_dash sd = new Staff_dash();
+                    while (myrs2.next()) {
+                        System.out.println("---------- In LOOP ---------");
+                        name_to_display = myrs2.getString("emp_name");
+                        designation_to_display = myrs2.getString("designation");
+                        sd.name_displayed.setText(name_to_display);
+                        sd.designation.setText(designation_to_display);
+                        sd.setVisible(true);
+                        this.dispose();
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "wrong password", "Dialog", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            if (!username_exists) {
+                JOptionPane.showMessageDialog(this, "user name does not exist", "Dialog", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        } finally {
+            if (myrs != null) {
+                try {
+                    myrs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (stmnt != null) {
+                try {
+                    stmnt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+//        Staff_dash sd = new Staff_dash();
+//        sd.setVisible(true);
+//        sd.name_disp.setText("xyz");
+//        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
@@ -167,21 +230,21 @@ public class Staff_login extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
-        
+
     }//GEN-LAST:event_usernameActionPerformed
-boolean usernameflag=false;
-boolean passwordflag=false;
+    boolean usernameflag = false;
+    boolean passwordflag = false;
     private void usernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameKeyPressed
-        if(!usernameflag){
+        if (!usernameflag) {
             username.setText("");
-            usernameflag=true;
+            usernameflag = true;
         }
     }//GEN-LAST:event_usernameKeyPressed
 
     private void passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyPressed
-        if(!passwordflag){
+        if (!passwordflag) {
             password.setText("");
-            passwordflag=true;
+            passwordflag = true;
         }
     }//GEN-LAST:event_passwordKeyPressed
 

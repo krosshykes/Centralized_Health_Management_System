@@ -395,7 +395,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel4" min="-2" pref="300" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" max="32767" attributes="0"/>
+                                      <Component id="name_displayed" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel11" min="-2" pref="300" max="-2" attributes="0"/>
@@ -421,7 +421,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel38" min="-2" pref="300" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel39" max="32767" attributes="0"/>
+                                      <Component id="designation" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -446,7 +446,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="name_displayed" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -481,7 +481,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="designation" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="235" max="32767" attributes="0"/>
                           </Group>
@@ -543,13 +543,16 @@
                         <Property name="text" type="java.lang.String" value="To Be Displayed"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel9">
+                    <Component class="javax.swing.JLabel" name="name_displayed">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="To Be Displayed"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel10">
                       <Properties>
@@ -671,13 +674,16 @@
                         <Property name="text" type="java.lang.String" value="Designation"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel39">
+                    <Component class="javax.swing.JLabel" name="designation">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="To Be Displayed"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -888,6 +894,9 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fd" green="f2" red="f3" type="rgb"/>
                             </Property>
+                            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                              <ComponentRef name="aadharBtnGroup"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
@@ -901,6 +910,9 @@
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fd" green="f2" red="f3" type="rgb"/>
+                            </Property>
+                            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                              <ComponentRef name="aadharBtnGroup"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="24" style="0"/>

@@ -71,7 +71,7 @@ public class Staff_dash extends javax.swing.JFrame {
                 jLabel6 = new javax.swing.JLabel();
                 jLabel7 = new javax.swing.JLabel();
                 jLabel8 = new javax.swing.JLabel();
-                jLabel9 = new javax.swing.JLabel();
+                name_displayed = new javax.swing.JLabel();
                 jLabel10 = new javax.swing.JLabel();
                 jLabel11 = new javax.swing.JLabel();
                 jLabel12 = new javax.swing.JLabel();
@@ -86,7 +86,7 @@ public class Staff_dash extends javax.swing.JFrame {
                 jLabel18 = new javax.swing.JLabel();
                 jLabel20 = new javax.swing.JLabel();
                 jLabel38 = new javax.swing.JLabel();
-                jLabel39 = new javax.swing.JLabel();
+                designation = new javax.swing.JLabel();
                 registerCard = new javax.swing.JScrollPane();
                 regCardPnl = new javax.swing.JPanel();
                 jLabel21 = new javax.swing.JLabel();
@@ -361,8 +361,8 @@ public class Staff_dash extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel8.setText("To Be Displayed");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel9.setText("To Be Displayed");
+        name_displayed.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        name_displayed.setText("To Be Displayed");
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel10.setText("To Be Displayed");
@@ -407,8 +407,8 @@ public class Staff_dash extends javax.swing.JFrame {
         jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel38.setText("Designation");
 
-        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel39.setText("To Be Displayed");
+        designation.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        designation.setText("To Be Displayed");
 
         javax.swing.GroupLayout profileCardLayout = new javax.swing.GroupLayout(profileCard);
         profileCard.setLayout(profileCardLayout);
@@ -437,7 +437,7 @@ public class Staff_dash extends javax.swing.JFrame {
                     .addGroup(profileCardLayout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(name_displayed, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(profileCardLayout.createSequentialGroup()
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -457,7 +457,7 @@ public class Staff_dash extends javax.swing.JFrame {
                     .addGroup(profileCardLayout.createSequentialGroup()
                         .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(designation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         profileCardLayout.setVerticalGroup(
@@ -476,7 +476,7 @@ public class Staff_dash extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel9))
+                    .addComponent(name_displayed))
                 .addGap(18, 18, 18)
                 .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -504,7 +504,7 @@ public class Staff_dash extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
-                    .addComponent(jLabel39))
+                    .addComponent(designation))
                 .addContainerGap(235, Short.MAX_VALUE))
         );
 
@@ -518,6 +518,7 @@ public class Staff_dash extends javax.swing.JFrame {
         jLabel21.setText("Register with Aadhar Card?");
 
         yesRadio1.setBackground(new java.awt.Color(243, 242, 253));
+        aadharBtnGroup.add(yesRadio1);
         yesRadio1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         yesRadio1.setText("Yes");
         yesRadio1.addActionListener(new java.awt.event.ActionListener() {
@@ -527,6 +528,7 @@ public class Staff_dash extends javax.swing.JFrame {
         });
 
         noRadio1.setBackground(new java.awt.Color(243, 242, 253));
+        aadharBtnGroup.add(noRadio1);
         noRadio1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         noRadio1.setText("No");
         noRadio1.addActionListener(new java.awt.event.ActionListener() {
@@ -969,6 +971,7 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.ButtonGroup aadharBtnGroup;
     private javax.swing.JTextField aadharNo1;
     private javax.swing.JTextField address1;
+    public javax.swing.JLabel designation;
     private javax.swing.JTextField dob1;
     private javax.swing.JTextField dob3;
     private javax.swing.JTextField emailId1;
@@ -1012,13 +1015,11 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
@@ -1035,6 +1036,7 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.JPopupMenu menu;
     private javax.swing.JTextField mobile1;
     private javax.swing.JTextField name1;
+    public javax.swing.JLabel name_displayed;
     private javax.swing.JRadioButton noRadio1;
     private javax.swing.JTextField occupation1;
     private javax.swing.JPanel panel;
