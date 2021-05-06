@@ -293,9 +293,15 @@ public class Staff_dash extends javax.swing.JFrame {
 
         srchField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         srchField.setText("Search your symptoms....");
+        srchField.setToolTipText("");
         srchField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 srchFieldFocusLost(evt);
+            }
+        });
+        srchField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                srchFieldActionPerformed(evt);
             }
         });
         srchField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -945,11 +951,11 @@ public class Staff_dash extends javax.swing.JFrame {
             flag = true;
         }
         String search = srchField.getText().trim();
-
+        String[] strArray = {"Fever","Dry cough","Tiredness","Aches and pains","Sore throat","Diarrhoea","Conjunctivitis","Headache","Loss of taste or smell","A rash on skin, or discolouration of fingers or toes","Difficulty breathing or shortness of breath","Chest pain or pressure","Loss of speech or movement"};
         if (!search.equals("")) {
             mod.removeAllElements();
-            for (int i = 0; i < 100; i++) {
-                mod.addElement(i);
+            for (int i = 0; i < strArray.length; i++){
+                mod.addElement(strArray[i]);
             }
             menu.show(srchField, 0, srchField.getHeight());
         }
@@ -990,10 +996,8 @@ public class Staff_dash extends javax.swing.JFrame {
             stmnt = mycon.createStatement();
             aadhar_number = Long.parseLong(aadhar);
             String query = "Select * from aadhar_db where aadhar_no = " + aadhar_number;
-            boolean aadhar_number_exists = false;
             myrs = stmnt.executeQuery(query);
             while (myrs.next()) {
-                aadhar_number_exists = true;
                 name = myrs.getString("name");
                 gender = myrs.getString("gender");
                 dob = myrs.getString("dob");
@@ -1184,6 +1188,11 @@ public class Staff_dash extends javax.swing.JFrame {
     private void insurer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insurer1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_insurer1ActionPerformed
+
+    private void srchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_srchFieldActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_srchFieldActionPerformed
 
     /**
      * @param args the command line arguments
