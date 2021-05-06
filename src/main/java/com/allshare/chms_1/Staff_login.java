@@ -167,16 +167,26 @@ public class Staff_login extends javax.swing.JFrame {
         Statement stmnt2 = null;
         ResultSet myrs2 = null;
         try {
-            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "MyNewPass");
+            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "Asif@123");
             stmnt = mycon.createStatement();
             String var = username.getText().toString();
             String query = "Select * from users where user_name = \"" + var + "\"";
             stmnt2 = mycon.createStatement();
+
             String name_to_display;
             String designation_to_display;
+            int user_id;
+            long aadhar;
+            String dob;
+            String doj;
+            String city;
+            String state;
+            String address;
+            long mobile;
+
             myrs = stmnt.executeQuery(query);
             boolean username_exists = false;
-            int user_id;
+
             while (myrs.next()) {
                 username_exists = true;
                 String user_password = myrs.getString("password");
@@ -186,11 +196,28 @@ public class Staff_login extends javax.swing.JFrame {
                     myrs2 = stmnt2.executeQuery("select * from staff_details where user_id = \"" + user_id + "\"");
                     Staff_dash sd = new Staff_dash();
                     while (myrs2.next()) {
-                        System.out.println("---------- In LOOP ---------");
+
                         name_to_display = myrs2.getString("emp_name");
                         designation_to_display = myrs2.getString("designation");
-                        sd.name_displayed.setText(name_to_display);
+                        aadhar = myrs2.getLong("aadhar_number");
+                        dob = myrs2.getString("emp_dob");
+                        doj = myrs2.getString("emp_doj");
+                        city = myrs2.getString("emp_city");
+                        state = myrs2.getString("emp_state");
+                        address = myrs2.getString("emp_address");
+                        mobile = myrs2.getLong("emp_mobile");
+
+                        sd.emp_name.setText(name_to_display);
                         sd.designation.setText(designation_to_display);
+                        sd.emp_aadhar.setText(String.valueOf(aadhar));
+                        sd.emp_dob.setText(dob);
+                        sd.emp_doj.setText(doj);
+                        sd.emp_city.setText(city);
+                        sd.emp_state.setText(state);
+                        sd.emp_address.setText(address);
+                        sd.emp_mobile.setText(String.valueOf(mobile));
+                        sd.emp_user_id.setText(String.valueOf(user_id));
+
                         sd.setVisible(true);
                         this.dispose();
                     }
