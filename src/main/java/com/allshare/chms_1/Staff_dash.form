@@ -293,7 +293,7 @@
                                       <Component id="jButton1" min="-2" pref="264" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="24" max="32767" attributes="0"/>
+                              <EmptySpace pref="69" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -359,6 +359,9 @@
                       <Color blue="fd" green="f2" red="f3" type="rgb"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                       <CardConstraints cardName="profileCard"/>
@@ -373,24 +376,24 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel20" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="emp_city" min="-2" pref="300" max="-2" attributes="0"/>
+                                      <Component id="jjkdk" min="-2" pref="300" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel14" max="32767" attributes="0"/>
+                                      <Component id="emp_city" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel1" min="-2" pref="300" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" max="32767" attributes="0"/>
+                                      <Component id="emp_user_id" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="emp_aadhar" min="-2" pref="300" max="-2" attributes="0"/>
+                                      <Component id="j" min="-2" pref="300" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" max="32767" attributes="0"/>
+                                      <Component id="emp_aadhar" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="emp_dob" min="-2" pref="300" max="-2" attributes="0"/>
+                                      <Component id="hjsuahj" min="-2" pref="300" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" max="32767" attributes="0"/>
+                                      <Component id="emp_dob" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel4" min="-2" pref="300" max="-2" attributes="0"/>
@@ -398,25 +401,25 @@
                                       <Component id="name_displayed" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="emp_doj" min="-2" pref="300" max="-2" attributes="0"/>
+                                      <Component id="jhfud" min="-2" pref="300" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel12" max="32767" attributes="0"/>
+                                      <Component id="emp_doj" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="emp_state" min="-2" pref="300" max="-2" attributes="0"/>
-                                          <Component id="emp_address" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <Component id="hdudj" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <Component id="idduguyf" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel16" max="32767" attributes="0"/>
-                                          <Component id="jScrollPane2" pref="516" max="32767" attributes="0"/>
+                                          <Component id="emp_state" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane2" pref="561" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="emp_mobile" min="-2" pref="300" max="-2" attributes="0"/>
+                                      <Component id="hgkud" min="-2" pref="300" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel18" max="32767" attributes="0"/>
+                                      <Component id="emp_mobile" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel38" min="-2" pref="300" max="-2" attributes="0"/>
@@ -436,12 +439,12 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emp_user_id" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="j" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="emp_aadhar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -450,33 +453,33 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="hjsuahj" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="emp_dob" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jhfud" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="emp_doj" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jjkdk" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="emp_city" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="hdudj" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="emp_state" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane2" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <Component id="emp_address" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="idduguyf" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="hgkud" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="emp_mobile" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -500,7 +503,7 @@
                         <Property name="text" type="java.lang.String" value="Name"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="emp_dob">
+                    <Component class="javax.swing.JLabel" name="hjsuahj">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -519,7 +522,7 @@
                         <Property name="text" type="java.lang.String" value="User ID"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="emp_aadhar">
+                    <Component class="javax.swing.JLabel" name="j">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
@@ -527,21 +530,27 @@
                         <Property name="text" type="java.lang.String" value="Aadhar Number"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel7">
+                    <Component class="javax.swing.JLabel" name="emp_user_id">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="To Be Displayed"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel8">
+                    <Component class="javax.swing.JLabel" name="emp_aadhar">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="To Be Displayed"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="name_displayed">
                       <Properties>
@@ -554,15 +563,18 @@
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel10">
+                    <Component class="javax.swing.JLabel" name="emp_dob">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="To Be Displayed"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="emp_doj">
+                    <Component class="javax.swing.JLabel" name="jhfud">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
@@ -570,15 +582,18 @@
                         <Property name="text" type="java.lang.String" value="Date of Joining"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel12">
+                    <Component class="javax.swing.JLabel" name="emp_doj">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="To Be Displayed"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="emp_city">
+                    <Component class="javax.swing.JLabel" name="jjkdk">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
@@ -586,15 +601,18 @@
                         <Property name="text" type="java.lang.String" value="City"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel14">
+                    <Component class="javax.swing.JLabel" name="emp_city">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="To Be Displayed"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="emp_state">
+                    <Component class="javax.swing.JLabel" name="hdudj">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
@@ -602,15 +620,18 @@
                         <Property name="text" type="java.lang.String" value="State"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel16">
+                    <Component class="javax.swing.JLabel" name="emp_state">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="To Be Displayed"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="emp_address">
+                    <Component class="javax.swing.JLabel" name="idduguyf">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
@@ -626,15 +647,18 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="jTextArea1">
+                        <Component class="javax.swing.JTextArea" name="emp_address">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="rows" type="int" value="5"/>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="emp_mobile">
+                    <Component class="javax.swing.JLabel" name="hgkud">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
@@ -642,13 +666,16 @@
                         <Property name="text" type="java.lang.String" value="Mobile"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel18">
+                    <Component class="javax.swing.JLabel" name="emp_mobile">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="To Be Displayed"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel20">
                       <Properties>
@@ -716,60 +743,57 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                                  <Component id="name1" alignment="1" min="-2" pref="365" max="-2" attributes="0"/>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                          <Component id="jLabel35" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel34" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel33" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel32" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel31" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel30" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel29" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel28" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel27" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel26" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel22" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel23" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel24" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel25" alignment="0" pref="310" max="32767" attributes="0"/>
-                                                          <Component id="jLabel36" alignment="0" pref="310" max="32767" attributes="0"/>
-                                                          <Component id="jLabel37" alignment="0" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="jLabel35" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel34" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel33" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel32" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel31" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel30" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel29" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel28" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel27" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel26" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel22" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel23" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel24" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel25" alignment="0" pref="310" max="32767" attributes="0"/>
+                                                      <Component id="jLabel36" alignment="0" pref="310" max="32767" attributes="0"/>
+                                                      <Component id="jLabel37" alignment="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <EmptySpace min="72" pref="72" max="-2" attributes="0"/>
+                                                          <Component id="yesRadio1" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                                          <Component id="noRadio1" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="102" attributes="0">
-                                                              <EmptySpace min="72" pref="72" max="-2" attributes="0"/>
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Group type="102" alignment="0" attributes="0">
-                                                                      <Component id="yesRadio1" min="-2" max="-2" attributes="0"/>
-                                                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                                                      <Component id="noRadio1" min="-2" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                                  <Component id="aadharNo1" alignment="0" min="-2" pref="365" max="-2" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
-                                                          <Group type="102" alignment="1" attributes="0">
-                                                              <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="name1" min="-2" pref="365" max="-2" attributes="0"/>
                                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                                   <Group type="102" attributes="0">
                                                                       <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
                                                                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                                                                       <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
                                                                   </Group>
-                                                                  <Component id="gender1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="dob1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="address1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="emailId1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="mobile1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="occupation1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="jTextField16" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="jTextField17" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="jTextField20" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="dob3" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
-                                                                  <Component id="jComboBox2" max="32767" attributes="0"/>
+                                                                  <Component id="gender1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="dob1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="address1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="emailId1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="mobile1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="occupation1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="guardian1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="relationship1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="ref_doc1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="city1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="insurer1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="state1" max="32767" attributes="0"/>
                                                               </Group>
+                                                              <Component id="aadharNo1" alignment="0" min="-2" pref="365" max="-2" attributes="0"/>
                                                           </Group>
                                                       </Group>
                                                   </Group>
@@ -782,7 +806,7 @@
                                           <Component id="jButton4" min="-2" pref="176" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="91" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -818,12 +842,12 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jLabel36" max="32767" attributes="0"/>
-                                      <Component id="jComboBox2" max="32767" attributes="0"/>
+                                      <Component id="state1" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="dob3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="city1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -848,14 +872,14 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="guardian1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="relationship1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -866,12 +890,12 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox1" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="insurer1" alignment="3" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField20" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ref_doc1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                   <Component id="jButton4" min="-2" max="-2" attributes="0"/>
@@ -894,6 +918,9 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fd" green="f2" red="f3" type="rgb"/>
                             </Property>
+                            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                              <ComponentRef name="aadharBtnGroup"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
@@ -907,6 +934,9 @@
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fd" green="f2" red="f3" type="rgb"/>
+                            </Property>
+                            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                              <ComponentRef name="aadharBtnGroup"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="24" style="0"/>
@@ -1036,6 +1066,9 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="name1">
                           <Properties>
@@ -1047,6 +1080,9 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="gender1">
                           <Properties>
@@ -1058,6 +1094,9 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="dob1">
                           <Properties>
@@ -1069,6 +1108,9 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="address1">
                           <Properties>
@@ -1079,6 +1121,9 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="emailId1">
                           <Properties>
@@ -1089,6 +1134,9 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="mobile1">
                           <Properties>
@@ -1099,10 +1147,12 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="occupation1">
                           <Properties>
-                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
@@ -1110,8 +1160,11 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField16">
+                        <Component class="javax.swing.JTextField" name="guardian1">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1120,8 +1173,11 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField17">
+                        <Component class="javax.swing.JTextField" name="relationship1">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1130,8 +1186,11 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField20">
+                        <Component class="javax.swing.JTextField" name="ref_doc1">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1140,6 +1199,9 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton4">
                           <Properties>
@@ -1148,6 +1210,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Register"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel36">
                           <Properties>
@@ -1165,7 +1230,7 @@
                             <Property name="text" type="java.lang.String" value="City"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="dob3">
+                        <Component class="javax.swing.JTextField" name="city1">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1174,6 +1239,9 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButton1">
                           <Properties>
@@ -1188,6 +1256,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Yes"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton1ActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButton2">
                           <Properties>
@@ -1206,40 +1277,51 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton2ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="jComboBox1">
+                        <Component class="javax.swing.JComboBox" name="insurer1">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="4">
-                                <StringItem index="0" value="Item 1"/>
-                                <StringItem index="1" value="Item 2"/>
-                                <StringItem index="2" value="Item 3"/>
-                                <StringItem index="3" value="Item 4"/>
+                              <StringArray count="11">
+                                <StringItem index="0" value="none"/>
+                                <StringItem index="1" value="Star Health &amp; Allied Insurance Company Limited"/>
+                                <StringItem index="2" value="Max Bupa Health Insurance Company"/>
+                                <StringItem index="3" value="Apollo Munich Health Insurance Company"/>
+                                <StringItem index="4" value="Cigna TTK Health Insurance Company"/>
+                                <StringItem index="5" value="Religare Health Insurance Company"/>
+                                <StringItem index="6" value="ICICI Lombard Insurance Company"/>
+                                <StringItem index="7" value="New India Assurance Insurance Company"/>
+                                <StringItem index="8" value="Oriental Insurance Company Limited"/>
+                                <StringItem index="9" value="National Insurance Company"/>
+                                <StringItem index="10" value="Bajaj Allianz General Insurance"/>
                               </StringArray>
                             </Property>
+                            <Property name="focusCycleRoot" type="boolean" value="true"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insurer1ActionPerformed"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="jComboBox2">
+                        <Component class="javax.swing.JComboBox" name="state1">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="4">
-                                <StringItem index="0" value="Item 1"/>
-                                <StringItem index="1" value="Item 2"/>
-                                <StringItem index="2" value="Item 3"/>
-                                <StringItem index="3" value="Item 4"/>
-                              </StringArray>
+                              <StringArray count="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="state1ActionPerformed"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>

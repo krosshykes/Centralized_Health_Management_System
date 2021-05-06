@@ -204,10 +204,22 @@ public class Staff_login extends javax.swing.JFrame {
                         state = myrs2.getString("emp_state");
                         address = myrs2.getString("emp_address");
                         mobile = myrs2.getLong("emp_mobile");
-                        
+
+
                         
                         sd.name_displayed.setText(name_to_display);
                         sd.designation.setText(designation_to_display);
+                        sd.emp_aadhar.setText(String.valueOf(aadhar));
+                        sd.emp_dob.setText(dob);
+                        sd.emp_doj.setText(doj);
+                        sd.emp_city.setText(city);
+                        sd.emp_state.setText(state);
+                        sd.emp_address.setText(address);
+                        sd.emp_mobile.setText(String.valueOf(mobile));
+                        sd.emp_user_id.setText(String.valueOf(user_id));
+                       
+                       
+                        
                         
                         
                         sd.setVisible(true);
