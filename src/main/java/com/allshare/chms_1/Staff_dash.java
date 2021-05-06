@@ -6,6 +6,13 @@
 package com.allshare.chms_1;
 
 import java.awt.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import mdlaf.MaterialLookAndFeel;
 
@@ -58,6 +65,7 @@ public class Staff_dash extends javax.swing.JFrame {
                 regBtn = new javax.swing.JButton();
                 profileBtn = new javax.swing.JButton();
                 homeBtn = new javax.swing.JButton();
+                viewBtn = new javax.swing.JButton();
                 pnlCards = new javax.swing.JPanel();
                 homeCard = new javax.swing.JPanel();
                 srchField = new javax.swing.JTextField();
@@ -114,17 +122,39 @@ public class Staff_dash extends javax.swing.JFrame {
                 emailId1 = new javax.swing.JTextField();
                 mobile1 = new javax.swing.JTextField();
                 occupation1 = new javax.swing.JTextField();
-                jTextField16 = new javax.swing.JTextField();
-                jTextField17 = new javax.swing.JTextField();
-                jTextField20 = new javax.swing.JTextField();
+                guardian1 = new javax.swing.JTextField();
+                relationship1 = new javax.swing.JTextField();
+                ref_doc1 = new javax.swing.JTextField();
                 jButton4 = new javax.swing.JButton();
                 jLabel36 = new javax.swing.JLabel();
                 jLabel37 = new javax.swing.JLabel();
-                dob3 = new javax.swing.JTextField();
+                city1 = new javax.swing.JTextField();
                 jRadioButton1 = new javax.swing.JRadioButton();
                 jRadioButton2 = new javax.swing.JRadioButton();
-                jComboBox1 = new javax.swing.JComboBox<>();
-                jComboBox2 = new javax.swing.JComboBox<>();
+                insurer1 = new javax.swing.JComboBox<>();
+                state1 = new javax.swing.JComboBox<>();
+                viewPatPnl = new javax.swing.JPanel();
+                jLabel9 = new javax.swing.JLabel();
+                jLabel39 = new javax.swing.JLabel();
+                jTextField1 = new javax.swing.JTextField();
+                jComboBox3 = new javax.swing.JComboBox<>();
+                jLabel40 = new javax.swing.JLabel();
+                jCheckBox1 = new javax.swing.JCheckBox();
+                jCheckBox2 = new javax.swing.JCheckBox();
+                jCheckBox3 = new javax.swing.JCheckBox();
+                jCheckBox4 = new javax.swing.JCheckBox();
+                jCheckBox5 = new javax.swing.JCheckBox();
+                jCheckBox6 = new javax.swing.JCheckBox();
+                jCheckBox7 = new javax.swing.JCheckBox();
+                jCheckBox8 = new javax.swing.JCheckBox();
+                jCheckBox9 = new javax.swing.JCheckBox();
+                jCheckBox10 = new javax.swing.JCheckBox();
+                jCheckBox11 = new javax.swing.JCheckBox();
+                jCheckBox12 = new javax.swing.JCheckBox();
+                jCheckBox13 = new javax.swing.JCheckBox();
+                jButton3 = new javax.swing.JButton();
+                jScrollPane3 = new javax.swing.JScrollPane();
+                jTable1 = new javax.swing.JTable();
 
                 menu.setFocusable(false);
 
@@ -161,7 +191,7 @@ public class Staff_dash extends javax.swing.JFrame {
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
-            jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+            jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
             jPanel2.setOpaque(false);
 
             //{
@@ -251,6 +281,22 @@ public class Staff_dash extends javax.swing.JFrame {
             }
         });
 
+        viewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
+        viewBtn.setText(" ");
+        viewBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                viewBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                viewBtnMouseExited(evt);
+            }
+        });
+        viewBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
         sidebar.setLayout(sidebarLayout);
         sidebarLayout.setHorizontalGroup(
@@ -261,17 +307,20 @@ public class Staff_dash extends javax.swing.JFrame {
                     .addComponent(logoutBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(regBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(profileBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(homeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(homeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viewBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
         sidebarLayout.setVerticalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(homeBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 373, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, Short.MAX_VALUE)
                 .addComponent(profileBtn)
-                .addGap(56, 56, 56)
+                .addGap(55, 55, 55)
+                .addComponent(viewBtn)
+                .addGap(53, 53, 53)
                 .addComponent(regBtn)
                 .addGap(283, 283, 283)
                 .addComponent(logoutBtn)
@@ -607,17 +656,22 @@ public class Staff_dash extends javax.swing.JFrame {
         occupation1.setBackground(new java.awt.Color(255, 255, 255));
         occupation1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
-        jTextField16.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField16.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        guardian1.setBackground(new java.awt.Color(255, 255, 255));
+        guardian1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
-        jTextField17.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField17.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        relationship1.setBackground(new java.awt.Color(255, 255, 255));
+        relationship1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
-        jTextField20.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField20.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        ref_doc1.setBackground(new java.awt.Color(255, 255, 255));
+        ref_doc1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         jButton4.setText("Register");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel36.setText("State");
@@ -625,13 +679,18 @@ public class Staff_dash extends javax.swing.JFrame {
         jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel37.setText("City");
 
-        dob3.setBackground(new java.awt.Color(255, 255, 255));
-        dob3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        city1.setBackground(new java.awt.Color(255, 255, 255));
+        city1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
         jRadioButton1.setBackground(new java.awt.Color(243, 242, 253));
         insuranceBtnGroup.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jRadioButton1.setText("Yes");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         jRadioButton2.setBackground(new java.awt.Color(243, 242, 253));
         insuranceBtnGroup.add(jRadioButton2);
@@ -643,11 +702,11 @@ public class Staff_dash extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        insurer1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        insurer1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        state1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        state1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout regCardPnlLayout = new javax.swing.GroupLayout(regCardPnl);
         regCardPnl.setLayout(regCardPnlLayout);
@@ -700,12 +759,12 @@ public class Staff_dash extends javax.swing.JFrame {
                                                 .addComponent(emailId1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
                                                 .addComponent(mobile1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
                                                 .addComponent(occupation1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(jTextField16, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(jTextField20, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(dob3, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                                .addComponent(guardian1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                                                .addComponent(relationship1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                                                .addComponent(ref_doc1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                                                .addComponent(city1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                                                .addComponent(insurer1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(state1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                             .addComponent(jLabel21)))
                     .addGroup(regCardPnlLayout.createSequentialGroup()
                         .addGap(328, 328, 328)
@@ -739,11 +798,11 @@ public class Staff_dash extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox2))
+                    .addComponent(state1))
                 .addGap(18, 18, 18)
                 .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
-                    .addComponent(dob3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(city1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
@@ -763,13 +822,13 @@ public class Staff_dash extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(guardian1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel31)
                 .addGap(18, 18, 18)
                 .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(relationship1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
@@ -778,11 +837,11 @@ public class Staff_dash extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
-                    .addComponent(jComboBox1))
+                    .addComponent(insurer1))
                 .addGap(18, 18, 18)
                 .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ref_doc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addComponent(jButton4)
                 .addGap(20, 20, 20))
@@ -791,6 +850,177 @@ public class Staff_dash extends javax.swing.JFrame {
         registerCard.setViewportView(regCardPnl);
 
         pnlCards.add(registerCard, "registerCard");
+
+        viewPatPnl.setBackground(new java.awt.Color(243, 242, 253));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("View / Search Patient Details");
+
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel39.setText("Search");
+
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jTextField1.setText("Keyword");
+
+        jComboBox3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Patient ID", "Aadhar Number", "Name", "Gender", "Date of Birth", "State", "City", "Address", "Email-ID", "Mobile Number", "Occupation", "Guardian", "Insurer", "Referring Doctor" }));
+
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel40.setText("Details You Want to See");
+
+        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox1.setText("Aadhar Number");
+
+        jCheckBox2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox2.setText("Gender");
+
+        jCheckBox3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox3.setText("Date of Birth");
+
+        jCheckBox4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox4.setText("State");
+
+        jCheckBox5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox5.setText("Mobile Number");
+
+        jCheckBox6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox6.setText("City");
+
+        jCheckBox7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox7.setText("Address");
+
+        jCheckBox8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox8.setText("Referring Doctor");
+
+        jCheckBox9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox9.setText("Email ID");
+
+        jCheckBox10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox10.setText("Occupation");
+
+        jCheckBox11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox11.setText("Guardian");
+
+        jCheckBox12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox12.setText("Insurer");
+
+        jCheckBox13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox13.setText("All");
+
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButton3.setText("Search");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Type", "Info"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
+
+        javax.swing.GroupLayout viewPatPnlLayout = new javax.swing.GroupLayout(viewPatPnl);
+        viewPatPnl.setLayout(viewPatPnlLayout);
+        viewPatPnlLayout.setHorizontalGroup(
+            viewPatPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(viewPatPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(viewPatPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(viewPatPnlLayout.createSequentialGroup()
+                        .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(viewPatPnlLayout.createSequentialGroup()
+                        .addComponent(jLabel40)
+                        .addGap(18, 18, 18)
+                        .addGroup(viewPatPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(viewPatPnlLayout.createSequentialGroup()
+                                .addComponent(jCheckBox1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox4))
+                            .addGroup(viewPatPnlLayout.createSequentialGroup()
+                                .addComponent(jCheckBox5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox6)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox7)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox8))
+                            .addGroup(viewPatPnlLayout.createSequentialGroup()
+                                .addComponent(jCheckBox9)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox10)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox11)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox12)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox13))
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 53, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        viewPatPnlLayout.setVerticalGroup(
+            viewPatPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(viewPatPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addGroup(viewPatPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(viewPatPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(viewPatPnlLayout.createSequentialGroup()
+                        .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(3, 3, 3)))
+                .addGap(18, 18, 18)
+                .addGroup(viewPatPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(viewPatPnlLayout.createSequentialGroup()
+                        .addGroup(viewPatPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCheckBox1)
+                            .addComponent(jCheckBox2)
+                            .addComponent(jCheckBox3)
+                            .addComponent(jCheckBox4))
+                        .addGap(18, 18, 18)
+                        .addGroup(viewPatPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCheckBox5)
+                            .addComponent(jCheckBox6)
+                            .addComponent(jCheckBox7)
+                            .addComponent(jCheckBox8))
+                        .addGap(18, 18, 18)
+                        .addGroup(viewPatPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCheckBox9)
+                            .addComponent(jCheckBox10)
+                            .addComponent(jCheckBox11)
+                            .addComponent(jCheckBox12)
+                            .addComponent(jCheckBox13)))
+                    .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pnlCards.add(viewPatPnl, "viewPatCard");
 
         jSplitPane1.setRightComponent(pnlCards);
 
@@ -826,20 +1056,22 @@ public class Staff_dash extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void logoutBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseEntered
+        System.out.println(jSplitPane1.getDividerLocation());
         logoutBtn.setText("Logout");
         logoutBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\logout (1).png"));
-        jSplitPane1.setDividerLocation(130);
-        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 40, jPanel2.getHeight());
-        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 40, jSplitPane1.getHeight());
+        jSplitPane1.setDividerLocation(200);
+        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
         menu.setVisible(false);
     }//GEN-LAST:event_logoutBtnMouseEntered
 
     private void logoutBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseExited
+        System.out.println(jSplitPane1.getDividerLocation());
         logoutBtn.setText(" ");
         logoutBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\logout.png"));
-        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 40, jPanel2.getHeight());
-        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 40, jSplitPane1.getHeight());
         jSplitPane1.setDividerLocation(90);
+        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
     }//GEN-LAST:event_logoutBtnMouseExited
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
@@ -849,7 +1081,7 @@ public class Staff_dash extends javax.swing.JFrame {
     private void regBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regBtnMouseEntered
         regBtn.setText("Register New Patient");
         regBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\register (1).png"));
-        jSplitPane1.setDividerLocation(220);
+        jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
         menu.setVisible(false);
@@ -870,18 +1102,18 @@ public class Staff_dash extends javax.swing.JFrame {
     private void profileBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileBtnMouseEntered
         profileBtn.setText("Profile");
         profileBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\user (1).png"));
-        jSplitPane1.setDividerLocation(130);
-        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 40, jPanel2.getHeight());
-        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 40, jSplitPane1.getHeight());
+        jSplitPane1.setDividerLocation(200);
+        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
         menu.setVisible(false);
     }//GEN-LAST:event_profileBtnMouseEntered
 
     private void profileBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileBtnMouseExited
         profileBtn.setText(" ");
         profileBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\user.png"));
-        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 40, jPanel2.getHeight());
-        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 40, jSplitPane1.getHeight());
         jSplitPane1.setDividerLocation(90);
+        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
     }//GEN-LAST:event_profileBtnMouseExited
 
     private void profileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileBtnActionPerformed
@@ -891,17 +1123,17 @@ public class Staff_dash extends javax.swing.JFrame {
     private void homeBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseEntered
         homeBtn.setText("Home");
         homeBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\home (1).png"));
-        jSplitPane1.setDividerLocation(120);
-        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 30, jPanel2.getHeight());
-        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 30, jSplitPane1.getHeight());
+        jSplitPane1.setDividerLocation(200);
+        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
         menu.setVisible(false);
     }//GEN-LAST:event_homeBtnMouseEntered
 
     private void homeBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseExited
         homeBtn.setText(" ");
         homeBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\home.png"));
-        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 30, jPanel2.getHeight());
-        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 30, jSplitPane1.getHeight());
+        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
         jSplitPane1.setDividerLocation(90);
     }//GEN-LAST:event_homeBtnMouseExited
 
@@ -920,11 +1152,11 @@ public class Staff_dash extends javax.swing.JFrame {
             flag = true;
         }
         String search = srchField.getText().trim();
-
+        String[] strArray = {"Fever", "Dry cough", "Tiredness", "Aches and pains", "Sore throat", "Diarrhoea", "Conjunctivitis", "Headache", "Loss of taste or smell", "A rash on skin, or discolouration of fingers or toes", "Difficulty breathing or shortness of breath", "Chest pain or pressure", "Loss of speech or movement"};
         if (!search.equals("")) {
             mod.removeAllElements();
-            for (int i = 0; i < 100; i++) {
-                mod.addElement(i);
+            for (int i = 0; i < strArray.length; i++) {
+                mod.addElement(strArray[i]);
             }
             menu.show(srchField, 0, srchField.getHeight());
         }
@@ -933,18 +1165,232 @@ public class Staff_dash extends javax.swing.JFrame {
     private void srchFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_srchFieldKeyReleased
 
     }//GEN-LAST:event_srchFieldKeyReleased
+    long aadhar_number = 0;
+    String name;
+    String gender;
+    String dob;
+    String state;
+    String city;
+    String address;
+    String email;
+    long mobile_no;
+    String occupation;
+    String guardian;
+    String relationship;
+    int insurance;
+    String insurer;
+    String ref_doc;
 
+    boolean radioCheck = false;
     private void yesRadio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesRadio1ActionPerformed
-        // TODO add your handling code here:
+        radioCheck = true;
+        String aadhar = JOptionPane.showInputDialog(this, "Enter Aadhar number ");
+        Connection mycon = null;
+        Statement stmnt = null;
+        ResultSet myrs = null;
+        try {
+            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "Asif@123");
+            stmnt = mycon.createStatement();
+            aadhar_number = Long.parseLong(aadhar);
+            String query = "Select * from aadhar_db where aadhar_no = " + aadhar_number;
+            myrs = stmnt.executeQuery(query);
+            while (myrs.next()) {
+                name = myrs.getString("name");
+                gender = myrs.getString("gender");
+                dob = myrs.getString("dob");
+                state = myrs.getString("state");
+                city = myrs.getString("city");
+                address = myrs.getString("address");
+                email = myrs.getString("email_id");
+                mobile_no = myrs.getLong("mobile_no");
+
+                aadharNo1.setText(aadhar);
+                name1.setText(name);
+                gender1.setText(gender);
+                dob1.setText(dob);
+                state1.addItem(state);
+                city1.setText(city);
+                address1.setText(address);
+                emailId1.setText(email);
+                mobile1.setText(String.valueOf(mobile_no));
+
+            }
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        } finally {
+            if (myrs != null) {
+                try {
+                    myrs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (stmnt != null) {
+                try {
+                    stmnt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        state1.setEditable(false);
+        city1.setEditable(false);
+        address1.setEditable(false);
+        gender1.setEditable(false);
+        name1.setEditable(false);
+        aadharNo1.setEditable(false);
+        dob1.setEditable(false);
+        emailId1.setEditable(false);
+        mobile1.setEditable(false);
+        state1.setEnabled(false);
+
     }//GEN-LAST:event_yesRadio1ActionPerformed
 
     private void noRadio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noRadio1ActionPerformed
-        // TODO add your handling code here:
+        city1.setEditable(true);
+        address1.setEditable(true);
+        gender1.setEditable(true);
+        name1.setEditable(true);
+        aadharNo1.setEditable(true);
+        dob1.setEditable(true);
+        emailId1.setEditable(true);
+        mobile1.setEditable(true);
+        state1.setEnabled(true);
+
+        state1.addItem("Andaman and Nicobar Islands");
+        state1.addItem("Andhra Pradesh");
+        state1.addItem("Arunachal Pradesh");
+        state1.addItem("Assam");
+        state1.addItem("Bihar");
+        state1.addItem("Chandigarh");
+        state1.addItem("Chhattisgarh");
+        state1.addItem("Dadra and Nagar Haveli");
+        state1.addItem("Daman and Diu");
+        state1.addItem("Delhi");
+        state1.addItem("Goa");
+        state1.addItem("Gujarat");
+        state1.addItem("Haryana");
+        state1.addItem("Himachal Pradesh");
+        state1.addItem("Jammu and Kashmir");
+        state1.addItem("Jharkhand");
+        state1.addItem("Karnataka");
+        state1.addItem("Kerala");
+        state1.addItem("Lakshadweep");
+        state1.addItem("Madhya Pradesh");
+        state1.addItem("Maharashtrah");
+        state1.addItem("Manipur");
+        state1.addItem("Meghalaya");
+        state1.addItem("Mizoram");
+        state1.addItem("Nagaland");
+        state1.addItem("Odisha");
+        state1.addItem("Punjab");
+        state1.addItem("Rajasthan");
+        state1.addItem("Tamil Nadu");
+        state1.addItem("Telangana");
+        state1.addItem("Tripura");
+        state1.addItem("Uttar Pradesh");
+        state1.addItem("Uttarakhand");
+        state1.addItem("West Bengal");
     }//GEN-LAST:event_noRadio1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
+        insurance = 0;
+        insurer1.setEnabled(false);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
+        cardLayout.show(pnlCards, "viewPatCard");
+    }//GEN-LAST:event_viewBtnActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void viewBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewBtnMouseEntered
+        viewBtn.setText("View/Search Patient Details");
+        viewBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\search (1).png"));
+        jSplitPane1.setDividerLocation(200);
+        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
+        menu.setVisible(false);
+    }//GEN-LAST:event_viewBtnMouseEntered
+
+    private void viewBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewBtnMouseExited
+        viewBtn.setText(" ");
+        viewBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\search.png"));
+        jSplitPane1.setDividerLocation(90);
+        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
+    }//GEN-LAST:event_viewBtnMouseExited
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        insurance = 1;
+        insurer1.setEnabled(true);
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        name = name1.getText();
+        gender = gender1.getText();
+        dob = dob1.getText();
+        state = state1.getSelectedItem().toString();
+        if (!aadharNo1.getText().isEmpty()) {
+            aadhar_number = Long.parseLong(aadharNo1.getText());
+        }
+        city = city1.getText();
+        address = address1.getText();
+        email = emailId1.getText();
+        if (!mobile1.getText().isEmpty()) {
+            mobile_no = Long.parseLong(mobile1.getText());
+        }
+        occupation = occupation1.getText();
+        guardian = guardian1.getText();
+        relationship = relationship1.getText();
+        insurer = insurer1.getSelectedItem().toString();
+        ref_doc = ref_doc1.getText();
+
+        Connection mycon = null;
+        Statement stmnt = null;
+        ResultSet myrs = null;
+        try {
+            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "Asif@123");
+            stmnt = mycon.createStatement();
+            String query = "Select * from patient_details";
+//            boolean aadhar_number_exists = false;
+            myrs = stmnt.executeQuery(query);
+            int patient_id = 100000;
+            while (myrs.next()) {
+                patient_id++;
+            }
+            query = String.format("INSERT INTO `chms`.`patient_personal_details` (`pateint_id`, `aadhar_number`, `name`, `gender`, `dob`, `address`, `email_id`, `mobile_no`, `state`, `city`) VALUES ('%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s')", patient_id, aadhar_number, name, gender, dob, address, email, mobile_no, state, city);
+            int myrs1 = stmnt.executeUpdate(query);
+            query = String.format("INSERT INTO `chms`.`patient_details` (`patient_id`, `occupation`, `guardian`, `relationship`, `insurance`, `insurer`, `referring_doctor`) VALUES ('%d', '%s', '%s', '%s', '%d', '%s', '%s')", patient_id, occupation, guardian, relationship, insurance, insurer, ref_doc);
+            int myrs2 = stmnt.executeUpdate(query);
+            if (myrs1 == 0) {
+                JOptionPane.showMessageDialog(this, "Fill all the details", "Dialog", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Details successfully saved", "Dialog", JOptionPane.OK_OPTION);
+                cardLayout.show(pnlCards, "homeCard");
+            }
+        } catch (Exception exc) {
+            JOptionPane.showMessageDialog(this, "Fill all the details", "Dialog", JOptionPane.ERROR_MESSAGE);
+            exc.printStackTrace();
+        } finally {
+            if (myrs != null) {
+                try {
+                    myrs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (stmnt != null) {
+                try {
+                    stmnt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -971,18 +1417,33 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.ButtonGroup aadharBtnGroup;
     private javax.swing.JTextField aadharNo1;
     private javax.swing.JTextField address1;
+    private javax.swing.JTextField city1;
     public javax.swing.JLabel designation;
     private javax.swing.JTextField dob1;
-    private javax.swing.JTextField dob3;
     private javax.swing.JTextField emailId1;
     private javax.swing.JTextField gender1;
+    private javax.swing.JTextField guardian1;
     private javax.swing.JButton homeBtn;
     private javax.swing.JPanel homeCard;
     private javax.swing.ButtonGroup insuranceBtnGroup;
+    private javax.swing.JComboBox<String> insurer1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox10;
+    private javax.swing.JCheckBox jCheckBox11;
+    private javax.swing.JCheckBox jCheckBox12;
+    private javax.swing.JCheckBox jCheckBox13;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox jCheckBox7;
+    private javax.swing.JCheckBox jCheckBox8;
+    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1015,21 +1476,24 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JList<String> list;
     private javax.swing.JButton logoutBtn;
@@ -1043,11 +1507,16 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.JPanel pnlCards;
     private javax.swing.JButton profileBtn;
     private javax.swing.JPanel profileCard;
+    private javax.swing.JTextField ref_doc1;
     private javax.swing.JButton regBtn;
     private javax.swing.JPanel regCardPnl;
     private javax.swing.JScrollPane registerCard;
+    private javax.swing.JTextField relationship1;
     private javax.swing.JPanel sidebar;
     private javax.swing.JTextField srchField;
+    private javax.swing.JComboBox<String> state1;
+    private javax.swing.JButton viewBtn;
+    private javax.swing.JPanel viewPatPnl;
     private javax.swing.JRadioButton yesRadio1;
     // End of variables declaration//GEN-END:variables
 }
