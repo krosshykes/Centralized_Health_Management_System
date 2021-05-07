@@ -5,6 +5,7 @@
  */
 package com.allshare.chms_1;
 
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import mdlaf.MaterialLookAndFeel;
@@ -16,7 +17,7 @@ import mdlaf.MaterialLookAndFeel;
 public class Home extends javax.swing.JFrame {
 
     /**
-     * Creates new form Hom
+     * Creates new form Home
      */
     public Home() {
         initComponents();
@@ -129,9 +130,15 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void hospActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospActionPerformed
-        Staff_login sl = new Staff_login();
-        sl.setVisible(true);
-        this.dispose();
+        String h_id = JOptionPane.showInputDialog(this, "Enter Hospital ID ");
+        System.out.println(h_id);
+        if ("1212".equals(h_id)) {
+            Staff_login sl = new Staff_login();
+            sl.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Error: Invalid ID. Please Enter Correct ID ");
+        }
     }//GEN-LAST:event_hospActionPerformed
 
     private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
@@ -147,13 +154,13 @@ public class Home extends javax.swing.JFrame {
      * @throws java.lang.ClassNotFoundException
      * @throws java.lang.IllegalAccessException
      */
-    public static void main(String args[]) throws InstantiationException, UnsupportedLookAndFeelException, ClassNotFoundException, IllegalAccessException{
+    public static void main(String args[]) throws InstantiationException, UnsupportedLookAndFeelException, ClassNotFoundException, IllegalAccessException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        MaterialLookAndFeel lf=new MaterialLookAndFeel();
+        MaterialLookAndFeel lf = new MaterialLookAndFeel();
         UIManager.setLookAndFeel(lf);
         //</editor-fold>
 

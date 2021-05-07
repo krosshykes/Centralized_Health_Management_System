@@ -1347,7 +1347,8 @@
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="jCheckBox8" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
+                                          <Component id="srchBtn" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
                                               <Component id="jCheckBox9" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="jCheckBox10" min="-2" max="-2" attributes="0"/>
@@ -1358,9 +1359,8 @@
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="jCheckBox13" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="srchBtn" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="0" pref="53" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="33" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1412,7 +1412,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="srchBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" pref="545" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" pref="563" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1584,7 +1584,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="18" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="All"/>
+                        <Property name="text" type="java.lang.String" value="Name"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="srchBtn">

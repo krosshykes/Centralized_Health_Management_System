@@ -11,6 +11,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -912,7 +913,7 @@ public class Staff_dash extends javax.swing.JFrame {
         jCheckBox12.setText("Insurer");
 
         jCheckBox13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jCheckBox13.setText("All");
+        jCheckBox13.setText("Name");
 
         srchBtn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         srchBtn.setText("Search");
@@ -967,6 +968,7 @@ public class Staff_dash extends javax.swing.JFrame {
                                 .addComponent(jCheckBox7)
                                 .addGap(18, 18, 18)
                                 .addComponent(jCheckBox8))
+                            .addComponent(srchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(viewPatPnlLayout.createSequentialGroup()
                                 .addComponent(jCheckBox9)
                                 .addGap(18, 18, 18)
@@ -976,9 +978,8 @@ public class Staff_dash extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jCheckBox12)
                                 .addGap(18, 18, 18)
-                                .addComponent(jCheckBox13))
-                            .addComponent(srchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 53, Short.MAX_VALUE)))
+                                .addComponent(jCheckBox13)))
+                        .addGap(0, 33, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         viewPatPnlLayout.setVerticalGroup(
@@ -1018,7 +1019,7 @@ public class Staff_dash extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(srchBtn)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1306,12 +1307,168 @@ public class Staff_dash extends javax.swing.JFrame {
     private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
         cardLayout.show(pnlCards, "viewPatCard");
     }//GEN-LAST:event_viewBtnActionPerformed
-
+    boolean j1 = false;
+    boolean j2 = false;
+    boolean j3 = false;
+    boolean j4 = false;
+    boolean j5 = false;
+    boolean j6 = false;
+    boolean j7 = false;
+    boolean j8 = false;
+    boolean j9 = false;
+    boolean j10 = false;
+    boolean j11 = false;
+    boolean j12 = false;
+    boolean j13 = false;
     private void srchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_srchBtnActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Column 1", "Column 2"});
-        model.addRow(new Object[]{"Column 1", "Column 2"});
-        
+        String choice = jComboBox3.getSelectedItem().toString();
+        Hashtable<String, String> my_dict = new Hashtable<String, String>();
+        my_dict.put("Patient ID", "patient_id");
+        my_dict.put("Aadhar Number", "aadhar_number");
+        my_dict.put("Name", "name");
+        my_dict.put("State", "state");
+        my_dict.put("City", "city");
+        my_dict.put("Email-ID", "email_id");
+        my_dict.put("Mobile Number", "mobile_no");
+        my_dict.put("Occupation", "occupation");
+        my_dict.put("Guardian", "guardian");
+        my_dict.put("Insurer", "insurer");
+        my_dict.put("Referring Doctor", "referring_doctor");
+        choice = my_dict.get(choice);
+
+        Connection mycon = null;
+        Statement stmnt = null;
+        Statement stmnt2 = null;
+        ResultSet myrs = null;
+        ResultSet myrs2 = null;
+        try {
+            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "Asif@123");
+            stmnt = mycon.createStatement();
+            stmnt2 = mycon.createStatement();
+            int patient_id;
+            String query;
+            if (choice.equals("aadhar_number") || choice.equals("patient_id") || choice.equals("mobile_no")) {
+                query = "Select * from patient_personal_details where " + choice + " = " + jTextField1.getText();
+            } else {
+                query = "Select * from patient_personal_details where " + choice + " = \"" + jTextField1.getText() + "\"";
+            }
+            myrs = stmnt.executeQuery(query);
+            int sno = 1;
+            while (myrs.next()) {
+                name = myrs.getString("name");
+                gender = myrs.getString("gender");
+                dob = myrs.getString("dob");
+                state = myrs.getString("state");
+                city = myrs.getString("city");
+                address = myrs.getString("address");
+                email = myrs.getString("email_id");
+                mobile_no = myrs.getLong("mobile_no");
+                patient_id = myrs.getInt("patient_id");
+                aadhar_number = myrs.getLong("aadhar_number");
+                myrs2 = stmnt2.executeQuery(String.format("select * from patient_details where patient_id = %d", patient_id));
+                while (myrs2.next()) {
+                    occupation = myrs2.getString("occupation");
+                    guardian = myrs2.getString("guardian");
+                    relationship = myrs2.getString("relationship");
+                    insurer = myrs2.getString("insurer");
+                    ref_doc = myrs2.getString("referring_doctor");
+                }
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                j1 = jCheckBox1.isSelected();
+                j2 = jCheckBox2.isSelected();
+                j3 = jCheckBox3.isSelected();
+                j4 = jCheckBox4.isSelected();
+                j5 = jCheckBox5.isSelected();
+                j6 = jCheckBox6.isSelected();
+                j7 = jCheckBox7.isSelected();
+                j8 = jCheckBox8.isSelected();
+                j9 = jCheckBox9.isSelected();
+                j10 = jCheckBox10.isSelected();
+                j11 = jCheckBox11.isSelected();
+                j12 = jCheckBox12.isSelected();
+                j13 = jCheckBox13.isSelected();
+//                int rowCount = jTable1.getRowCount();
+//                for (int i = rowCount - 1; i >= 0; i--) {
+//                    jTable1.removeRow(i);
+//                }
+                for (int i = model.getRowCount() - 1; i >= 0; i--) {
+                    model.removeRow(0);
+                }
+
+                if (!(j1 || j2 || j3 || j4 || j5 || j6 || j7 || j8 || j9 || j10 || j11 || j12 || j13)) {
+                    model.addRow(new Object[]{sno, "Name", name});
+                    model.addRow(new Object[]{sno, "Aadhar number", aadhar_number});
+                    model.addRow(new Object[]{sno, "Gender", gender});
+                    model.addRow(new Object[]{sno, "Date of birth", dob});
+                    model.addRow(new Object[]{sno, "State", state});
+                    model.addRow(new Object[]{sno, "City", city});
+                    model.addRow(new Object[]{sno, "Mobile Number", mobile_no});
+                    model.addRow(new Object[]{sno, "Address", address});
+                    model.addRow(new Object[]{sno, "Reffering Doctor", ref_doc});
+                    model.addRow(new Object[]{sno, "E-mail", email});
+                    model.addRow(new Object[]{sno, "Occupation", occupation});
+                    model.addRow(new Object[]{sno, "Guardian", guardian});
+                    model.addRow(new Object[]{sno, "Insurer", insurer});
+                }
+                if (j13) {
+                    model.addRow(new Object[]{sno, "Name", name});
+                }
+                if (j1) {
+                    model.addRow(new Object[]{sno, "Aadhar number", aadhar_number});
+                }
+                if (j2) {
+                    model.addRow(new Object[]{sno, "Gender", gender});
+                }
+                if (j3) {
+                    model.addRow(new Object[]{sno, "Date of birth", dob});
+                }
+                if (j4) {
+                    model.addRow(new Object[]{sno, "State", state});
+                }
+                if (j6) {
+                    model.addRow(new Object[]{sno, "City", city});
+                }
+                if (j5) {
+                    model.addRow(new Object[]{sno, "Mobile Number", mobile_no});
+                }
+                if (j7) {
+                    model.addRow(new Object[]{sno, "Address", address});
+                }
+                if (j8) {
+                    model.addRow(new Object[]{sno, "Reffering Doctor", ref_doc});
+                }
+                if (j9) {
+                    model.addRow(new Object[]{sno, "E-mail", email});
+                }
+                if (j10) {
+                    model.addRow(new Object[]{sno, "Occupation", occupation});
+                }
+                if (j11) {
+                    model.addRow(new Object[]{sno, "Guardian", guardian});
+                }
+                if (j12) {
+                    model.addRow(new Object[]{sno, "Insurer", insurer});
+                }
+                sno++;
+            }
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        } finally {
+            if (myrs != null) {
+                try {
+                    myrs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (stmnt != null) {
+                try {
+                    stmnt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
     }//GEN-LAST:event_srchBtnActionPerformed
 
     private void viewBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewBtnMouseEntered
