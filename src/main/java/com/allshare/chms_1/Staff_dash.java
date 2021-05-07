@@ -441,6 +441,7 @@ public class Staff_dash extends javax.swing.JFrame {
         jLabel17.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         emp_address.setColumns(20);
+        emp_address.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         emp_address.setRows(5);
         jScrollPane2.setViewportView(emp_address);
 

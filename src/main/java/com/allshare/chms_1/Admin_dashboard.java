@@ -65,13 +65,6 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 jLabel3 = new javax.swing.JLabel();
                 jLabel2 = new javax.swing.JLabel();
                 jButton1 = new javax.swing.JButton();
-                profileCard = new javax.swing.JPanel();
-                jLabel4 = new javax.swing.JLabel();
-                jLabel5 = new javax.swing.JLabel();
-                jLabel11 = new javax.swing.JLabel();
-                jLabel12 = new javax.swing.JLabel();
-                jLabel13 = new javax.swing.JLabel();
-                jLabel14 = new javax.swing.JLabel();
                 addHospCard = new javax.swing.JPanel();
                 jLabel1 = new javax.swing.JLabel();
                 jLabel6 = new javax.swing.JLabel();
@@ -113,6 +106,31 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 jComboBox4 = new javax.swing.JComboBox<>();
                 jComboBox5 = new javax.swing.JComboBox<>();
                 jButton6 = new javax.swing.JButton();
+                profileCard = new javax.swing.JPanel();
+                jLabel4 = new javax.swing.JLabel();
+                jLabel5 = new javax.swing.JLabel();
+                jLabel24 = new javax.swing.JLabel();
+                jLabel25 = new javax.swing.JLabel();
+                emp_user_id = new javax.swing.JLabel();
+                emp_aadhar = new javax.swing.JLabel();
+                emp_name = new javax.swing.JLabel();
+                emp_dob = new javax.swing.JLabel();
+                jLabel11 = new javax.swing.JLabel();
+                emp_doj = new javax.swing.JLabel();
+                jLabel13 = new javax.swing.JLabel();
+                emp_city = new javax.swing.JLabel();
+                jLabel26 = new javax.swing.JLabel();
+                emp_state = new javax.swing.JLabel();
+                jLabel27 = new javax.swing.JLabel();
+                jScrollPane6 = new javax.swing.JScrollPane();
+                emp_address = new javax.swing.JTextArea();
+                jLabel28 = new javax.swing.JLabel();
+                emp_mobile = new javax.swing.JLabel();
+                jLabel29 = new javax.swing.JLabel();
+                jLabel38 = new javax.swing.JLabel();
+                designation = new javax.swing.JLabel();
+                jLabel12 = new javax.swing.JLabel();
+                jLabel14 = new javax.swing.JLabel();
 
                 list.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
                 list.setModel(new javax.swing.AbstractListModel<String>() {
@@ -306,7 +324,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(homeBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
                 .addComponent(profileBtn)
                 .addGap(35, 35, 35)
                 .addComponent(addUserBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -364,7 +382,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         homeCardLayout.setVerticalGroup(
             homeCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -377,70 +395,10 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addGroup(homeCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jButton1))
-                .addContainerGap(251, Short.MAX_VALUE))
+                .addContainerGap(269, Short.MAX_VALUE))
         );
 
         pnlCards.add(homeCard, "homeCard");
-
-        profileCard.setBackground(new java.awt.Color(243, 242, 253));
-
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel4.setText("Name");
-
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel5.setText("Designation");
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel11.setText("Admin Level");
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel12.setText("Name to be Displayed");
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel13.setText("Designation to be Displayed");
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel14.setText("Admin Level to be Displayed");
-
-        javax.swing.GroupLayout profileCardLayout = new javax.swing.GroupLayout(profileCard);
-        profileCard.setLayout(profileCardLayout);
-        profileCardLayout.setHorizontalGroup(
-            profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(profileCardLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55))
-        );
-        profileCardLayout.setVerticalGroup(
-            profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(profileCardLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel12))
-                .addGap(39, 39, 39)
-                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel13))
-                .addGap(45, 45, 45)
-                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel14))
-                .addContainerGap(645, Short.MAX_VALUE))
-        );
-
-        pnlCards.add(profileCard, "profileCard");
 
         addHospCard.setBackground(new java.awt.Color(243, 242, 253));
 
@@ -474,7 +432,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                     .addGroup(addHospCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
                         .addComponent(jTextField4)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         addHospCardLayout.setVerticalGroup(
             addHospCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -489,7 +447,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(638, Short.MAX_VALUE))
+                .addContainerGap(656, Short.MAX_VALUE))
         );
 
         pnlCards.add(addHospCard, "registerCard");
@@ -598,7 +556,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(viewReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(viewReqCardLayout.createSequentialGroup()
-                                .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
+                                .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(viewReqCardLayout.createSequentialGroup()
@@ -619,7 +577,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -761,7 +719,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                             .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(attReqCardLayout.createSequentialGroup()
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 365, Short.MAX_VALUE))))
+                                .addGap(0, 370, Short.MAX_VALUE))))
                     .addComponent(jScrollPane5)
                     .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -784,7 +742,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel23)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -862,7 +820,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jTextField1)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
                             .addComponent(jTextField2)
                             .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -877,9 +835,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(addUserCardLayout.createSequentialGroup()
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)))
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -887,31 +843,211 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(addUserCardLayout.createSequentialGroup()
-                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)))
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(addUserCardLayout.createSequentialGroup()
-                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)))
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(addUserCardLayout.createSequentialGroup()
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)))
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addContainerGap(326, Short.MAX_VALUE))
         );
 
         pnlCards.add(addUserCard, "addUserCard");
+
+        profileCard.setBackground(new java.awt.Color(243, 242, 253));
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setText("Name");
+
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel5.setText("Date of Birth");
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel24.setText("User ID");
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel25.setText("Aadhar Number");
+
+        emp_user_id.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        emp_user_id.setText("To Be Displayed");
+
+        emp_aadhar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        emp_aadhar.setText("To Be Displayed");
+
+        emp_name.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        emp_name.setText("To Be Displayed");
+
+        emp_dob.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        emp_dob.setText("To Be Displayed");
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel11.setText("Date of Joining");
+
+        emp_doj.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        emp_doj.setText("To Be Displayed");
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel13.setText("City");
+
+        emp_city.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        emp_city.setText("To Be Displayed");
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel26.setText("State");
+
+        emp_state.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        emp_state.setText("To Be Displayed");
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel27.setText("Address");
+        jLabel27.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        emp_address.setColumns(20);
+        emp_address.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        emp_address.setRows(5);
+        jScrollPane6.setViewportView(emp_address);
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel28.setText("Mobile");
+
+        emp_mobile.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        emp_mobile.setText("To Be Displayed");
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("View Profile");
+        jLabel29.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 102, 255)));
+
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel38.setText("Designation");
+
+        designation.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        designation.setText("To Be Displayed");
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel12.setText("Admin Level");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel14.setText("To Be Displayed from users table");
+
+        javax.swing.GroupLayout profileCardLayout = new javax.swing.GroupLayout(profileCard);
+        profileCard.setLayout(profileCardLayout);
+        profileCardLayout.setHorizontalGroup(
+            profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(profileCardLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(emp_city, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(emp_user_id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(emp_aadhar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(emp_dob, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(emp_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(emp_doj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emp_state, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(emp_mobile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(profileCardLayout.createSequentialGroup()
+                        .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel38, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(designation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
+        );
+        profileCardLayout.setVerticalGroup(
+            profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(profileCardLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(emp_user_id))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(emp_aadhar))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(emp_name))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(emp_dob))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(emp_doj))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(emp_city))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(emp_state))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(emp_mobile))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(designation))
+                .addGap(18, 18, 18)
+                .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel14))
+                .addContainerGap(185, Short.MAX_VALUE))
+        );
+
+        pnlCards.add(profileCard, "profileCard");
 
         jSplitPane1.setRightComponent(pnlCards);
 
@@ -1151,6 +1287,16 @@ public class Admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel addUserCard;
     private javax.swing.JButton attReqBtn;
     private javax.swing.JPanel attReqCard;
+    public javax.swing.JLabel designation;
+    public javax.swing.JLabel emp_aadhar;
+    public javax.swing.JTextArea emp_address;
+    public javax.swing.JLabel emp_city;
+    public javax.swing.JLabel emp_dob;
+    public javax.swing.JLabel emp_doj;
+    public javax.swing.JLabel emp_mobile;
+    public javax.swing.JLabel emp_name;
+    public javax.swing.JLabel emp_state;
+    public javax.swing.JLabel emp_user_id;
     private javax.swing.JButton homeBtn;
     private javax.swing.JPanel homeCard;
     private javax.swing.JButton jButton1;
@@ -1179,7 +1325,14 @@ public class Admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1192,6 +1345,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
