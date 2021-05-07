@@ -952,7 +952,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void logoutBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseEntered
         logoutBtn.setText("Logout");
-        logoutBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\Logout (1).png"));
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logout (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());        
@@ -961,7 +961,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void logoutBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseExited
         logoutBtn.setText(" ");
-        logoutBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\logout.png"));
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logout.png")));
         jSplitPane1.setDividerLocation(90);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
@@ -970,7 +970,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void addHospBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addHospBtnMouseEntered
         addHospBtn.setText("Add Hospital");
-        addHospBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\add (1).png"));
+        addHospBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());        
@@ -979,7 +979,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void addHospBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addHospBtnMouseExited
         addHospBtn.setText(" ");
-        addHospBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\add.png"));
+        addHospBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add.png")));
         jSplitPane1.setDividerLocation(90);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
@@ -987,7 +987,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void profileBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileBtnMouseEntered
         profileBtn.setText("Profile");
-        profileBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\user (1).png"));
+        profileBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user (1).png")));
         jSplitPane1.setDividerLocation(130);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 40, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 40, jSplitPane1.getHeight());
@@ -996,7 +996,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void profileBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileBtnMouseExited
         profileBtn.setText(" ");
-        profileBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\user.png"));
+        profileBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png")));
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 40, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 40, jSplitPane1.getHeight());
         jSplitPane1.setDividerLocation(90);
@@ -1004,7 +1004,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void homeBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseEntered
         homeBtn.setText("Home");
-        homeBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\home (1).png"));
+        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
@@ -1013,7 +1013,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void homeBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseExited
         homeBtn.setText(" ");
-        homeBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\home.png"));
+        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home.png")));
         jSplitPane1.setDividerLocation(90);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
@@ -1058,7 +1058,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void viewReqBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewReqBtnMouseEntered
         viewReqBtn.setText("View/Search Requests");
-        viewReqBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\search (1).png"));
+        viewReqBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
@@ -1067,7 +1067,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void viewReqBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewReqBtnMouseExited
         viewReqBtn.setText(" ");
-        viewReqBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\search.png"));
+        viewReqBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png")));
         jSplitPane1.setDividerLocation(90);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
@@ -1079,7 +1079,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void attReqBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_attReqBtnMouseEntered
         attReqBtn.setText("Attend Requests");
-        attReqBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\edit (1).png"));
+        attReqBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edit (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
@@ -1088,7 +1088,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void attReqBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_attReqBtnMouseExited
         attReqBtn.setText(" ");
-        attReqBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\edit.png"));
+        attReqBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edit.png")));
         jSplitPane1.setDividerLocation(90);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
@@ -1104,7 +1104,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void addUserBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addUserBtnMouseEntered
         addUserBtn.setText("Add User");
-        addUserBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\add-user (1).png"));
+        addUserBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add-user (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
@@ -1113,7 +1113,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
     private void addUserBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addUserBtnMouseExited
         addUserBtn.setText(" ");
-        addUserBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\add-user.png"));
+        addUserBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add-user.png")));
         jSplitPane1.setDividerLocation(90);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());

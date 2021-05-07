@@ -14,6 +14,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import mdlaf.MaterialLookAndFeel;
 
 /**
@@ -152,7 +153,7 @@ public class Staff_dash extends javax.swing.JFrame {
                 jCheckBox11 = new javax.swing.JCheckBox();
                 jCheckBox12 = new javax.swing.JCheckBox();
                 jCheckBox13 = new javax.swing.JCheckBox();
-                jButton3 = new javax.swing.JButton();
+                srchBtn = new javax.swing.JButton();
                 jScrollPane3 = new javax.swing.JScrollPane();
                 jTable1 = new javax.swing.JTable();
 
@@ -191,7 +192,7 @@ public class Staff_dash extends javax.swing.JFrame {
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
-            jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+            jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
             jPanel2.setOpaque(false);
 
             //{
@@ -871,6 +872,11 @@ public class Staff_dash extends javax.swing.JFrame {
 
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jCheckBox1.setText("Aadhar Number");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
 
         jCheckBox2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jCheckBox2.setText("Gender");
@@ -908,20 +914,17 @@ public class Staff_dash extends javax.swing.JFrame {
         jCheckBox13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jCheckBox13.setText("All");
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton3.setText("Search");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        srchBtn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        srchBtn.setText("Search");
+        srchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                srchBtnActionPerformed(evt);
             }
         });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Type", "Info"
@@ -974,7 +977,7 @@ public class Staff_dash extends javax.swing.JFrame {
                                 .addComponent(jCheckBox12)
                                 .addGap(18, 18, 18)
                                 .addComponent(jCheckBox13))
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(srchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 53, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -1013,7 +1016,7 @@ public class Staff_dash extends javax.swing.JFrame {
                             .addComponent(jCheckBox13)))
                     .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(srchBtn)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1057,7 +1060,7 @@ public class Staff_dash extends javax.swing.JFrame {
     private void logoutBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseEntered
         System.out.println(jSplitPane1.getDividerLocation());
         logoutBtn.setText("Logout");
-        logoutBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\logout (1).png"));
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logout (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
@@ -1067,7 +1070,7 @@ public class Staff_dash extends javax.swing.JFrame {
     private void logoutBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseExited
         System.out.println(jSplitPane1.getDividerLocation());
         logoutBtn.setText(" ");
-        logoutBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\logout.png"));
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logout.png")));
         jSplitPane1.setDividerLocation(90);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
@@ -1079,7 +1082,7 @@ public class Staff_dash extends javax.swing.JFrame {
 
     private void regBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regBtnMouseEntered
         regBtn.setText("Register New Patient");
-        regBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\register (1).png"));
+        regBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/register (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
@@ -1088,7 +1091,7 @@ public class Staff_dash extends javax.swing.JFrame {
 
     private void regBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regBtnMouseExited
         regBtn.setText(" ");
-        regBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\register.png"));
+        regBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/register.png")));
         jSplitPane1.setDividerLocation(90);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
@@ -1100,7 +1103,7 @@ public class Staff_dash extends javax.swing.JFrame {
 
     private void profileBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileBtnMouseEntered
         profileBtn.setText("Profile");
-        profileBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\user (1).png"));
+        profileBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
@@ -1109,7 +1112,7 @@ public class Staff_dash extends javax.swing.JFrame {
 
     private void profileBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileBtnMouseExited
         profileBtn.setText(" ");
-        profileBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\user.png"));
+        profileBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png")));
         jSplitPane1.setDividerLocation(90);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
@@ -1121,7 +1124,7 @@ public class Staff_dash extends javax.swing.JFrame {
 
     private void homeBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseEntered
         homeBtn.setText("Home");
-        homeBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\home (1).png"));
+        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
@@ -1130,7 +1133,7 @@ public class Staff_dash extends javax.swing.JFrame {
 
     private void homeBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseExited
         homeBtn.setText(" ");
-        homeBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\home.png"));
+        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home.png")));
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
         jSplitPane1.setDividerLocation(90);
@@ -1155,7 +1158,7 @@ public class Staff_dash extends javax.swing.JFrame {
         if (!search.equals("")) {
             mod.removeAllElements();
             for (int i = 0; i < strArray.length; i++) {
-                
+
                 if (strArray[i].contains(search)) {
                     mod.addElement(strArray[i]);
                 }
@@ -1304,13 +1307,16 @@ public class Staff_dash extends javax.swing.JFrame {
         cardLayout.show(pnlCards, "viewPatCard");
     }//GEN-LAST:event_viewBtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void srchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_srchBtnActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Column 1", "Column 2"});
+        model.addRow(new Object[]{"Column 1", "Column 2"});
+        
+    }//GEN-LAST:event_srchBtnActionPerformed
 
     private void viewBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewBtnMouseEntered
         viewBtn.setText("View/Search Patient Details");
-        viewBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\search (1).png"));
+        viewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
@@ -1319,7 +1325,7 @@ public class Staff_dash extends javax.swing.JFrame {
 
     private void viewBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewBtnMouseExited
         viewBtn.setText(" ");
-        viewBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\coolb\\Downloads\\NetBeansProjects\\CHMS_1\\src\\main\\resources\\search.png"));
+        viewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png")));
         jSplitPane1.setDividerLocation(90);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
@@ -1394,6 +1400,11 @@ public class Staff_dash extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.removeRow(0);
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1439,7 +1450,6 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.ButtonGroup insuranceBtnGroup;
     private javax.swing.JComboBox<String> insurer1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
@@ -1515,6 +1525,7 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.JScrollPane registerCard;
     private javax.swing.JTextField relationship1;
     private javax.swing.JPanel sidebar;
+    private javax.swing.JButton srchBtn;
     private javax.swing.JTextField srchField;
     private javax.swing.JComboBox<String> state1;
     private javax.swing.JButton viewBtn;
