@@ -41,6 +41,7 @@ public class Home extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Centralized Hospital Management System");
 
         jPanel1.setLayout(null);
 

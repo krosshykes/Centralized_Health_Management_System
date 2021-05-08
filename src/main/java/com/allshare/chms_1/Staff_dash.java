@@ -1079,6 +1079,8 @@ public class Staff_dash extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutBtnMouseExited
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
+        Staff_login sl = new Staff_login();
+        sl.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_logoutBtnActionPerformed
 
