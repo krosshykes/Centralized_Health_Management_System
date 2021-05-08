@@ -800,16 +800,16 @@
                                                                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                                                                       <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
                                                                   </Group>
-                                                                  <Component id="gender1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="dob1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="address1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="emailId1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="mobile1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="occupation1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="guardian1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="relationship1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="ref_doc1" alignment="0" pref="365" max="32767" attributes="0"/>
-                                                                  <Component id="city1" alignment="0" pref="365" max="32767" attributes="0"/>
+                                                                  <Component id="gender1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="dob1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="address1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="emailId1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="mobile1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="occupation1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="guardian1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="relationship1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="ref_doc1" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="city1" alignment="0" max="32767" attributes="0"/>
                                                                   <Component id="insurer1" alignment="0" max="32767" attributes="0"/>
                                                                   <Component id="state1" max="32767" attributes="0"/>
                                                               </Group>
@@ -1285,7 +1285,42 @@
                               <Font name="Segoe UI" size="24" style="0"/>
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
+                              <StringArray count="34">
+                                <StringItem index="0" value="Andaman and Nicobar Islands"/>
+                                <StringItem index="1" value="Andhra Pradesh"/>
+                                <StringItem index="2" value="Arunachal Pradesh"/>
+                                <StringItem index="3" value="Assam"/>
+                                <StringItem index="4" value="Bihar"/>
+                                <StringItem index="5" value="Chandigarh"/>
+                                <StringItem index="6" value="Chhattisgarh"/>
+                                <StringItem index="7" value="Dadra and Nagar Haveli"/>
+                                <StringItem index="8" value="Daman and Diu"/>
+                                <StringItem index="9" value="Delhi"/>
+                                <StringItem index="10" value="Goa"/>
+                                <StringItem index="11" value="Gujarat"/>
+                                <StringItem index="12" value="Haryana"/>
+                                <StringItem index="13" value="Himachal Pradesh"/>
+                                <StringItem index="14" value="Jammu and Kashmir"/>
+                                <StringItem index="15" value="Jharkhand"/>
+                                <StringItem index="16" value="Karnataka"/>
+                                <StringItem index="17" value="Kerala"/>
+                                <StringItem index="18" value="Lakshadweep"/>
+                                <StringItem index="19" value="Madhya Pradesh"/>
+                                <StringItem index="20" value="Maharashtrah"/>
+                                <StringItem index="21" value="Manipur"/>
+                                <StringItem index="22" value="Meghalaya"/>
+                                <StringItem index="23" value="Mizoram"/>
+                                <StringItem index="24" value="Nagaland"/>
+                                <StringItem index="25" value="Odisha"/>
+                                <StringItem index="26" value="Punjab"/>
+                                <StringItem index="27" value="Rajasthan"/>
+                                <StringItem index="28" value="Tamil Nadu"/>
+                                <StringItem index="29" value="Telangana"/>
+                                <StringItem index="30" value="Tripura"/>
+                                <StringItem index="31" value="Uttar Pradesh"/>
+                                <StringItem index="32" value="Uttarakhand"/>
+                                <StringItem index="33" value="West Bengal"/>
+                              </StringArray>
                             </Property>
                           </Properties>
                           <AuxValues>

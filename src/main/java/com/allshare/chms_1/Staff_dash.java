@@ -709,6 +709,7 @@ public class Staff_dash extends javax.swing.JFrame {
         insurer1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         state1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        state1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Lakshadweep", "Madhya Pradesh", "Maharashtrah", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal" }));
 
         javax.swing.GroupLayout regCardPnlLayout = new javax.swing.GroupLayout(regCardPnl);
         regCardPnl.setLayout(regCardPnlLayout);
@@ -755,16 +756,16 @@ public class Staff_dash extends javax.swing.JFrame {
                                                     .addComponent(jRadioButton1)
                                                     .addGap(58, 58, 58)
                                                     .addComponent(jRadioButton2))
-                                                .addComponent(gender1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(dob1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(address1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(emailId1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(mobile1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(occupation1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(guardian1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(relationship1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(ref_doc1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                                                .addComponent(city1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                                                .addComponent(gender1)
+                                                .addComponent(dob1)
+                                                .addComponent(address1)
+                                                .addComponent(emailId1)
+                                                .addComponent(mobile1)
+                                                .addComponent(occupation1)
+                                                .addComponent(guardian1)
+                                                .addComponent(relationship1)
+                                                .addComponent(ref_doc1)
+                                                .addComponent(city1)
                                                 .addComponent(insurer1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(state1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                             .addComponent(jLabel21)))
@@ -1265,40 +1266,7 @@ public class Staff_dash extends javax.swing.JFrame {
         mobile1.setEditable(true);
         state1.setEnabled(true);
 
-        state1.addItem("Andaman and Nicobar Islands");
-        state1.addItem("Andhra Pradesh");
-        state1.addItem("Arunachal Pradesh");
-        state1.addItem("Assam");
-        state1.addItem("Bihar");
-        state1.addItem("Chandigarh");
-        state1.addItem("Chhattisgarh");
-        state1.addItem("Dadra and Nagar Haveli");
-        state1.addItem("Daman and Diu");
-        state1.addItem("Delhi");
-        state1.addItem("Goa");
-        state1.addItem("Gujarat");
-        state1.addItem("Haryana");
-        state1.addItem("Himachal Pradesh");
-        state1.addItem("Jammu and Kashmir");
-        state1.addItem("Jharkhand");
-        state1.addItem("Karnataka");
-        state1.addItem("Kerala");
-        state1.addItem("Lakshadweep");
-        state1.addItem("Madhya Pradesh");
-        state1.addItem("Maharashtrah");
-        state1.addItem("Manipur");
-        state1.addItem("Meghalaya");
-        state1.addItem("Mizoram");
-        state1.addItem("Nagaland");
-        state1.addItem("Odisha");
-        state1.addItem("Punjab");
-        state1.addItem("Rajasthan");
-        state1.addItem("Tamil Nadu");
-        state1.addItem("Telangana");
-        state1.addItem("Tripura");
-        state1.addItem("Uttar Pradesh");
-        state1.addItem("Uttarakhand");
-        state1.addItem("West Bengal");
+        
     }//GEN-LAST:event_noRadio1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
