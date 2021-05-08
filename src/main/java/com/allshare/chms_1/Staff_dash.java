@@ -1475,9 +1475,9 @@ public class Staff_dash extends javax.swing.JFrame {
     private void viewBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewBtnMouseEntered
         viewBtn.setText("View/Search Patient Details");
         viewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search (1).png")));
-        jSplitPane1.setDividerLocation(200);
-        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
-        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
+        jSplitPane1.setDividerLocation(250);
+        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 150, jPanel2.getHeight());
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 150, jSplitPane1.getHeight());
         menu.setVisible(false);
     }//GEN-LAST:event_viewBtnMouseEntered
 
@@ -1485,8 +1485,8 @@ public class Staff_dash extends javax.swing.JFrame {
         viewBtn.setText(" ");
         viewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png")));
         jSplitPane1.setDividerLocation(90);
-        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
-        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
+        jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 150, jPanel2.getHeight());
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 150, jSplitPane1.getHeight());
     }//GEN-LAST:event_viewBtnMouseExited
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
