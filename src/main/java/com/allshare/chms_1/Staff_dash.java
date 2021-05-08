@@ -599,7 +599,7 @@ public class Staff_dash extends javax.swing.JFrame {
         jLabel24.setText("Gender:");
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel25.setText("Date of Birth (DDMMYYYY):");
+        jLabel25.setText("Date of Birth (YYYYMMDD):");
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel26.setText("Address:");
@@ -709,7 +709,6 @@ public class Staff_dash extends javax.swing.JFrame {
         insurer1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         state1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        state1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout regCardPnlLayout = new javax.swing.GroupLayout(regCardPnl);
         regCardPnl.setLayout(regCardPnlLayout);

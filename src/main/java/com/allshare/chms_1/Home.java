@@ -5,6 +5,13 @@
  */
 package com.allshare.chms_1;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -132,13 +139,45 @@ public class Home extends javax.swing.JFrame {
 
     private void hospActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospActionPerformed
         String h_id = JOptionPane.showInputDialog(this, "Enter Hospital ID ");
-        System.out.println(h_id);
-        if ("1212".equals(h_id)) {
-            Staff_login sl = new Staff_login();
-            sl.setVisible(true);
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(this, "Error: Invalid ID. Please Enter Correct ID ");
+        Connection mycon = null;
+        Statement stmnt = null;
+        ResultSet myrs = null;
+        try {
+            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "MyNewPass");
+            stmnt = mycon.createStatement();
+            String query = "Select * from hospital_db where hospital_id = " + h_id;
+
+            myrs = stmnt.executeQuery(query);
+            boolean hospital_exists = false;
+
+            while (myrs.next()) {
+                hospital_exists = true;
+                Staff_login sl = new Staff_login();
+                sl.hospital_name.setText(myrs.getString("hosp_name"));
+                sl.hospital_address.setText(myrs.getString("hospital_address"));
+                sl.setVisible(true);
+                this.dispose();
+            }
+            if (!hospital_exists) {
+                JOptionPane.showMessageDialog(this, "Hospital Id does not exist", "Dialog", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        } finally {
+            if (myrs != null) {
+                try {
+                    myrs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (stmnt != null) {
+                try {
+                    stmnt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
     }//GEN-LAST:event_hospActionPerformed
 
