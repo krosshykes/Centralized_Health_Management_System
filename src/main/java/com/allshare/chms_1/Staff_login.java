@@ -32,7 +32,7 @@ public class Staff_login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        loginBtn = new javax.swing.JButton();
         password = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         hospital_address = new javax.swing.JLabel();
@@ -47,13 +47,13 @@ public class Staff_login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Staff Login");
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/right-arrow.png"))); // NOI18N
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        loginBtn.setBackground(new java.awt.Color(0, 102, 255));
+        loginBtn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        loginBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/right-arrow.png"))); // NOI18N
+        loginBtn.setText("Login");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginBtnActionPerformed(evt);
             }
         });
 
@@ -150,7 +150,7 @@ public class Staff_login extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(username)
                             .addComponent(password)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(loginBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,7 +173,7 @@ public class Staff_login extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
@@ -190,14 +190,14 @@ public class Staff_login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         Connection mycon = null;
         Statement stmnt = null;
         ResultSet myrs = null;
         Statement stmnt2 = null;
         ResultSet myrs2 = null;
         try {
-            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "Asif@123");
+            mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
             stmnt = mycon.createStatement();
             String var = username.getText().toString();
             String query = "Select * from users where user_name = \"" + var + "\"";
@@ -223,6 +223,7 @@ public class Staff_login extends javax.swing.JFrame {
                 user_id = myrs.getInt("user_id");
                 String entered_password = password.getText().toString();
                 if (user_password.equals(entered_password)) {
+                    System.out.println("Login Success");
                     myrs2 = stmnt2.executeQuery("select * from staff_details where user_id = \"" + user_id + "\"");
                     Staff_dash sd = new Staff_dash();
                     while (myrs2.next()) {
@@ -247,8 +248,10 @@ public class Staff_login extends javax.swing.JFrame {
                         sd.emp_address.setText(address);
                         sd.emp_mobile.setText(String.valueOf(mobile));
                         sd.emp_user_id.setText(String.valueOf(user_id));
+                        System.out.println("Profile Values Set");
 
                         sd.setVisible(true);
+                        mycon.close();
                         this.dispose();
                     }
                 } else {
@@ -280,7 +283,7 @@ public class Staff_login extends javax.swing.JFrame {
 //        sd.setVisible(true);
 //        sd.name_disp.setText("xyz");
 //        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_loginBtnActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
@@ -355,11 +358,11 @@ public class Staff_login extends javax.swing.JFrame {
     private javax.swing.JButton exitBtn;
     public javax.swing.JLabel hospital_address;
     public javax.swing.JLabel hospital_name;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton loginBtn;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

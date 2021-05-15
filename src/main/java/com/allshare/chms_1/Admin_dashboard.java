@@ -6,7 +6,16 @@
 package com.allshare.chms_1;
 
 import java.awt.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Hashtable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import mdlaf.MaterialLookAndFeel;
 
 /**
@@ -20,7 +29,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
      */
     CardLayout cardLayout;
     private final DefaultListModel mod;
-    
+
     public Admin_dashboard() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
@@ -31,7 +40,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
         mod = new DefaultListModel();
         list.setModel(mod);
         System.out.println("--  " + this.getPreferredSize());
-        
+
     }
 
     /**
@@ -65,26 +74,26 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 srchField = new javax.swing.JTextField();
                 jLabel3 = new javax.swing.JLabel();
                 jLabel2 = new javax.swing.JLabel();
-                jButton1 = new javax.swing.JButton();
+                contact_doc = new javax.swing.JButton();
                 addHospCard = new javax.swing.JPanel();
                 jLabel1 = new javax.swing.JLabel();
                 jLabel6 = new javax.swing.JLabel();
-                jTextField3 = new javax.swing.JTextField();
-                jTextField4 = new javax.swing.JTextField();
-                jButton2 = new javax.swing.JButton();
+                hospital_name = new javax.swing.JTextField();
+                hospital_address = new javax.swing.JTextField();
+                reg_hosp = new javax.swing.JButton();
                 viewReqCard = new javax.swing.JPanel();
                 jLabel7 = new javax.swing.JLabel();
                 jLabel8 = new javax.swing.JLabel();
-                jTextField5 = new javax.swing.JTextField();
-                jComboBox1 = new javax.swing.JComboBox<>();
+                searchbox = new javax.swing.JTextField();
+                type = new javax.swing.JComboBox<>();
                 jScrollPane2 = new javax.swing.JScrollPane();
                 jTable1 = new javax.swing.JTable();
-                jButton3 = new javax.swing.JButton();
+                search_hosp = new javax.swing.JButton();
                 attReqCard = new javax.swing.JPanel();
                 jLabel9 = new javax.swing.JLabel();
                 jLabel10 = new javax.swing.JLabel();
-                jComboBox2 = new javax.swing.JComboBox<>();
-                jButton4 = new javax.swing.JButton();
+                request_id2 = new javax.swing.JComboBox<>();
+                attend_req = new javax.swing.JButton();
                 jScrollPane3 = new javax.swing.JScrollPane();
                 jTable2 = new javax.swing.JTable();
                 jLabel22 = new javax.swing.JLabel();
@@ -98,23 +107,23 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 jLabel19 = new javax.swing.JLabel();
                 jLabel20 = new javax.swing.JLabel();
                 jLabel21 = new javax.swing.JLabel();
-                jComboBox3 = new javax.swing.JComboBox<>();
-                jComboBox5 = new javax.swing.JComboBox<>();
-                jButton6 = new javax.swing.JButton();
+                designation1 = new javax.swing.JComboBox<>();
+                admin_level1 = new javax.swing.JComboBox<>();
+                reg_user = new javax.swing.JButton();
                 jLabel35 = new javax.swing.JLabel();
-                jTextField7 = new javax.swing.JTextField();
+                aadhar = new javax.swing.JTextField();
                 jButton5 = new javax.swing.JButton();
-                jLabel18 = new javax.swing.JLabel();
+                name = new javax.swing.JLabel();
                 jLabel36 = new javax.swing.JLabel();
-                jLabel37 = new javax.swing.JLabel();
+                dob = new javax.swing.JLabel();
                 jLabel39 = new javax.swing.JLabel();
-                jLabel40 = new javax.swing.JLabel();
+                doj = new javax.swing.JLabel();
                 jLabel41 = new javax.swing.JLabel();
-                jLabel42 = new javax.swing.JLabel();
+                city = new javax.swing.JLabel();
                 jLabel43 = new javax.swing.JLabel();
-                jLabel44 = new javax.swing.JLabel();
-                jLabel45 = new javax.swing.JLabel();
-                jLabel46 = new javax.swing.JLabel();
+                state = new javax.swing.JLabel();
+                address = new javax.swing.JLabel();
+                mobile = new javax.swing.JLabel();
                 profileCard = new javax.swing.JPanel();
                 jLabel4 = new javax.swing.JLabel();
                 jLabel5 = new javax.swing.JLabel();
@@ -139,17 +148,18 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 jLabel38 = new javax.swing.JLabel();
                 designation = new javax.swing.JLabel();
                 jLabel12 = new javax.swing.JLabel();
-                jLabel14 = new javax.swing.JLabel();
+                admin_level = new javax.swing.JLabel();
                 mkReqCard = new javax.swing.JPanel();
                 jLabel30 = new javax.swing.JLabel();
                 jLabel31 = new javax.swing.JLabel();
-                jComboBox6 = new javax.swing.JComboBox<>();
-                jTextField6 = new javax.swing.JTextField();
+                item1 = new javax.swing.JComboBox<>();
+                specs1 = new javax.swing.JTextField();
                 jLabel32 = new javax.swing.JLabel();
-                jLabel33 = new javax.swing.JLabel();
+                hospital_name_displayed = new javax.swing.JLabel();
                 jLabel34 = new javax.swing.JLabel();
-                jComboBox7 = new javax.swing.JComboBox<>();
-                jButton7 = new javax.swing.JButton();
+                urgency_level1 = new javax.swing.JComboBox<>();
+                make_req = new javax.swing.JButton();
+                jLabel14 = new javax.swing.JLabel();
 
                 list.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
                 list.setModel(new javax.swing.AbstractListModel<String>() {
@@ -404,8 +414,13 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setText("Do you have Symptoms of COVID-19?");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setText("Contact a Doctor");
+        contact_doc.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        contact_doc.setText("Contact a Doctor");
+        contact_doc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contact_docActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout homeCardLayout = new javax.swing.GroupLayout(homeCard);
         homeCard.setLayout(homeCardLayout);
@@ -419,7 +434,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                     .addGroup(homeCardLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(contact_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         homeCardLayout.setVerticalGroup(
@@ -432,7 +447,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(homeCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jButton1))
+                    .addComponent(contact_doc))
                 .addContainerGap(269, Short.MAX_VALUE))
         );
 
@@ -446,14 +461,19 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel6.setText("State");
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jTextField3.setText("Hospital name to be Registered");
+        hospital_name.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        hospital_name.setText("Hospital name to be Registered");
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jTextField4.setText("State where hospital is located");
+        hospital_address.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        hospital_address.setText("State where hospital is located");
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton2.setText("Register");
+        reg_hosp.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        reg_hosp.setText("Register");
+        reg_hosp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reg_hospActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout addHospCardLayout = new javax.swing.GroupLayout(addHospCard);
         addHospCard.setLayout(addHospCardLayout);
@@ -466,10 +486,10 @@ public class Admin_dashboard extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(addHospCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reg_hosp, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(addHospCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
-                        .addComponent(jTextField4)))
+                        .addComponent(hospital_name, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+                        .addComponent(hospital_address)))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
         addHospCardLayout.setVerticalGroup(
@@ -478,13 +498,13 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(addHospCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hospital_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(addHospCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hospital_address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(reg_hosp, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(656, Short.MAX_VALUE))
         );
 
@@ -499,16 +519,16 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel8.setText("Search");
 
-        jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jTextField5.setText("Keyword");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        searchbox.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        searchbox.setText("Keyword");
+        searchbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                searchboxActionPerformed(evt);
             }
         });
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital", "Item", "Request ID", "Urgency Level" }));
+        type.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital", "Item", "Request ID", "Urgency Level" }));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -577,8 +597,13 @@ public class Admin_dashboard extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable1);
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton3.setText("Search");
+        search_hosp.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        search_hosp.setText("Search");
+        search_hosp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_hospActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout viewReqCardLayout = new javax.swing.GroupLayout(viewReqCard);
         viewReqCard.setLayout(viewReqCardLayout);
@@ -594,11 +619,11 @@ public class Admin_dashboard extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(viewReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(viewReqCardLayout.createSequentialGroup()
-                                .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+                                .addComponent(searchbox, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(viewReqCardLayout.createSequentialGroup()
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(search_hosp, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
@@ -610,10 +635,10 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(viewReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(searchbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(search_hosp)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
                 .addContainerGap())
@@ -630,11 +655,16 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel10.setText("Enter Request ID");
 
-        jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        request_id2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        request_id2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton4.setText("Attend Request");
+        attend_req.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        attend_req.setText("Attend Request");
+        attend_req.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                attend_reqActionPerformed(evt);
+            }
+        });
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -754,9 +784,9 @@ public class Admin_dashboard extends javax.swing.JFrame {
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(attReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(request_id2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(attReqCardLayout.createSequentialGroup()
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(attend_req, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 382, Short.MAX_VALUE))))
                     .addComponent(jScrollPane5)
                     .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -770,9 +800,9 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(attReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(request_id2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(attend_req)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel22)
                 .addGap(18, 18, 18)
@@ -807,27 +837,32 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setText("Add User");
 
-        jComboBox3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        designation1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        designation1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "doctor", "surgeon" }));
 
-        jComboBox5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+        admin_level1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        admin_level1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "super admin" }));
+        admin_level1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox5ActionPerformed(evt);
+                admin_level1ActionPerformed(evt);
             }
         });
 
-        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton6.setText("Register User");
+        reg_user.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        reg_user.setText("Register User");
+        reg_user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reg_userActionPerformed(evt);
+            }
+        });
 
         jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel35.setText("Aadhar Number");
 
-        jTextField7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jTextField7.addKeyListener(new java.awt.event.KeyAdapter() {
+        aadhar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        aadhar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField7KeyPressed(evt);
+                aadharKeyPressed(evt);
             }
         });
 
@@ -838,38 +873,38 @@ public class Admin_dashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel18.setText("To Be Displayed");
+        name.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        name.setText("To Be Displayed");
 
         jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel36.setText("Date of Birth");
 
-        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel37.setText("To Be Displayed");
+        dob.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        dob.setText("To Be Displayed");
 
         jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel39.setText("Date of Joining");
 
-        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel40.setText("To Be Displayed");
+        doj.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        doj.setText("To Be Displayed");
 
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel41.setText("City");
 
-        jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel42.setText("To Be Displayed");
+        city.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        city.setText("To Be Displayed");
 
         jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel43.setText("State");
 
-        jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel44.setText("To Be Displayed");
+        state.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        state.setText("To Be Displayed");
 
-        jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel45.setText("To Be Displayed");
+        address.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        address.setText("To Be Displayed");
 
-        jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel46.setText("To Be Displayed");
+        mobile.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        mobile.setText("To Be Displayed");
 
         javax.swing.GroupLayout addUserCardLayout = new javax.swing.GroupLayout(addUserCard);
         addUserCard.setLayout(addUserCardLayout);
@@ -884,19 +919,19 @@ public class Admin_dashboard extends javax.swing.JFrame {
                             .addGroup(addUserCardLayout.createSequentialGroup()
                                 .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(state, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(addUserCardLayout.createSequentialGroup()
                                 .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(city, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(addUserCardLayout.createSequentialGroup()
                                 .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(doj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(addUserCardLayout.createSequentialGroup()
                                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(dob, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(addUserCardLayout.createSequentialGroup()
                                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -908,15 +943,15 @@ public class Admin_dashboard extends javax.swing.JFrame {
                                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(designation1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(admin_level1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(mobile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(addUserCardLayout.createSequentialGroup()
-                                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(reg_user, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 320, Short.MAX_VALUE))
-                                    .addComponent(jTextField7))))
+                                    .addComponent(aadhar))))
                         .addGap(10, 10, 10)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -929,46 +964,46 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel35)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                    .addComponent(aadhar, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(41, 41, 41)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
+                    .addComponent(name))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36)
-                    .addComponent(jLabel37))
+                    .addComponent(dob))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
-                    .addComponent(jLabel40))
+                    .addComponent(doj))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel41)
-                    .addComponent(jLabel42))
+                    .addComponent(city))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
-                    .addComponent(jLabel44))
+                    .addComponent(state))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jLabel45))
+                    .addComponent(address))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel46))
+                    .addComponent(mobile))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(designation1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addUserCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(admin_level1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(reg_user, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(193, Short.MAX_VALUE))
         );
 
@@ -1049,8 +1084,8 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel12.setText("Admin Level");
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel14.setText("To Be Displayed from users table");
+        admin_level.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        admin_level.setText("To Be Displayed from users table");
 
         javax.swing.GroupLayout profileCardLayout = new javax.swing.GroupLayout(profileCard);
         profileCard.setLayout(profileCardLayout);
@@ -1103,7 +1138,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(designation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(admin_level, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         profileCardLayout.setVerticalGroup(
@@ -1154,7 +1189,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jLabel14))
+                    .addComponent(admin_level))
                 .addContainerGap(185, Short.MAX_VALUE))
         );
 
@@ -1169,26 +1204,34 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel31.setText("Item");
 
-        jComboBox6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        item1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        item1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTextField6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jTextField6.setText("Keyword");
+        specs1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        specs1.setText("Keyword");
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel32.setText("Hospital");
 
-        jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel33.setText("To Be Displayed");
+        hospital_name_displayed.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        hospital_name_displayed.setText("To Be Displayed");
 
         jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel34.setText("Urgency Level");
 
-        jComboBox7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        urgency_level1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        urgency_level1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton7.setText("Make Request");
+        make_req.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        make_req.setText("Make Request");
+        make_req.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                make_reqActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel14.setText("Specification");
 
         javax.swing.GroupLayout mkReqCardLayout = new javax.swing.GroupLayout(mkReqCard);
         mkReqCard.setLayout(mkReqCardLayout);
@@ -1199,23 +1242,28 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addGroup(mkReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(mkReqCardLayout.createSequentialGroup()
-                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(mkReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(mkReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField6)
-                            .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(specs1)
+                            .addComponent(item1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(mkReqCardLayout.createSequentialGroup()
-                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(mkReqCardLayout.createSequentialGroup()
-                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGroup(mkReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                         .addGroup(mkReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mkReqCardLayout.createSequentialGroup()
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 398, Short.MAX_VALUE))
-                            .addComponent(jComboBox7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(18, 18, 18)
+                                .addComponent(hospital_name_displayed, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(mkReqCardLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(mkReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(mkReqCardLayout.createSequentialGroup()
+                                        .addComponent(make_req, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 398, Short.MAX_VALUE))
+                                    .addComponent(urgency_level1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap())
         );
         mkReqCardLayout.setVerticalGroup(
@@ -1224,22 +1272,23 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel30)
                 .addGap(18, 18, 18)
-                .addGroup(mkReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(mkReqCardLayout.createSequentialGroup()
-                        .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(mkReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(item1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31))
+                .addGap(18, 18, 18)
+                .addGroup(mkReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(specs1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
                 .addGap(18, 18, 18)
                 .addGroup(mkReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hospital_name_displayed, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(mkReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(urgency_level1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(make_req, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(516, Short.MAX_VALUE))
         );
 
@@ -1289,7 +1338,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
         logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logout (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
-        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());        
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
         menu.setVisible(false);
     }//GEN-LAST:event_logoutBtnMouseEntered
 
@@ -1299,7 +1348,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jSplitPane1.setDividerLocation(90);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() - 130, jPanel2.getHeight());
         jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() - 130, jSplitPane1.getHeight());
-        
+
     }//GEN-LAST:event_logoutBtnMouseExited
 
     private void addHospBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addHospBtnMouseEntered
@@ -1307,7 +1356,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
         addHospBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add (1).png")));
         jSplitPane1.setDividerLocation(200);
         jPanel2.setBounds(jPanel2.getX(), jPanel2.getY(), jPanel2.getWidth() + 130, jPanel2.getHeight());
-        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());        
+        jSplitPane1.setBounds(jSplitPane1.getX(), jSplitPane1.getY(), jSplitPane1.getWidth() + 130, jSplitPane1.getHeight());
         menu.setVisible(false);
     }//GEN-LAST:event_addHospBtnMouseEntered
 
@@ -1362,7 +1411,11 @@ public class Admin_dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_profileBtnActionPerformed
 
     private void addHospBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addHospBtnActionPerformed
+        if(admin_level.getText().equals("super admin"))
         cardLayout.show(pnlCards, "registerCard");
+        else{
+        JOptionPane.showMessageDialog(this, "You don't have permissions", "Dialog", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_addHospBtnActionPerformed
 
     private void srchFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_srchFieldKeyReleased
@@ -1370,13 +1423,13 @@ public class Admin_dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_srchFieldKeyReleased
     boolean flag = false;
     private void srchFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_srchFieldKeyPressed
-        
+
         if (!flag) {
             srchField.setText("");
             flag = true;
         }
         String search = srchField.getText().trim();
-        
+
         if (!search.equals("")) {
             mod.removeAllElements();
             for (int i = 0; i < 100; i++) {
@@ -1429,12 +1482,80 @@ public class Admin_dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_attReqBtnMouseExited
 
     private void attReqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attReqBtnActionPerformed
+        Connection mycon = null;
+        Statement stmnt = null;
+        ResultSet myrs = null;
+        Statement stmnt2 = null;
+        Statement stmnt3 = null;
+        ResultSet myrs2 = null;
         cardLayout.show(pnlCards, "attReqCard");
+        DefaultTableModel model1 = (DefaultTableModel) jTable3.getModel();
+        for(int i = model1.getRowCount()-1;i>=0;i--)
+                        model1.removeRow(i);
+        DefaultTableModel model2 = (DefaultTableModel) jTable2.getModel();
+        for(int i = model2.getRowCount()-1;i>=0;i--)
+                        model2.removeRow(i);
+        request_id2.removeAllItems();
+        try {
+            mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
+            stmnt = mycon.createStatement();
+            stmnt2 = mycon.createStatement();
+            stmnt3 = mycon.createStatement();
+            String query = "Select * from notification";
+            myrs = stmnt.executeQuery(query);
+            while (myrs.next()) {
+                if(myrs.getInt("fulfilled")==0||myrs.getInt("confirmed")==0){
+                    request_id2.addItem(String.valueOf(myrs.getInt("request_id")));
+                    query = "Select * from requests where request_id = "+String.valueOf(myrs.getInt("request_id")); 
+                    myrs2 = stmnt2.executeQuery(query);
+                    while(myrs2.next()){
+                    boolean isConfirmed = true, isFulfilled = true;
+                    if(myrs.getInt("fulfilled")==0)
+                        isFulfilled = false;
+                    if(myrs.getInt("confirmed")==0)
+                        isConfirmed = false;
+                    model1.addRow(new Object[]{String.valueOf(myrs.getInt("request_id")),myrs2.getString("item"),myrs2.getString("specifcation"),myrs2.getString("urgency_level"),isFulfilled , isConfirmed});
+                }
+                }
+                else{
+                    query = "Select * from requests where request_id = "+String.valueOf(myrs.getInt("request_id")); 
+                    myrs2 = stmnt2.executeQuery(query);
+                    
+                    while(myrs2.next()){
+                        int request_id = myrs.getInt("request_id");
+                        if(myrs2.getString("request_status").equals("pending")){
+                        query = String.format("UPDATE `oPeO2hCFKh`.`requests` SET `request_status` = 'fulfilled' WHERE (`request_id` = '%d')",request_id);
+                            
+                        int myrs3 = stmnt3.executeUpdate(query);
+                        }
+                    model2.addRow(new Object[]{String.valueOf(myrs.getInt("request_id")),myrs2.getString("item"),myrs2.getString("specifcation"),myrs2.getString("req_from_hosp"),true});
+                }
+                }
+            }
+            
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        } finally {
+            if (myrs != null) {
+                try {
+                    myrs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (stmnt != null) {
+                try {
+                    stmnt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
     }//GEN-LAST:event_attReqBtnActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void searchboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchboxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_searchboxActionPerformed
 
     private void addUserBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addUserBtnMouseEntered
         addUserBtn.setText("Add User");
@@ -1457,9 +1578,9 @@ public class Admin_dashboard extends javax.swing.JFrame {
         cardLayout.show(pnlCards, "addUserCard");
     }//GEN-LAST:event_addUserBtnActionPerformed
 
-    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+    private void admin_level1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_level1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox5ActionPerformed
+    }//GEN-LAST:event_admin_level1ActionPerformed
 
     private void mkReqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mkReqBtnActionPerformed
         cardLayout.show(pnlCards, "mkReqCard");
@@ -1486,12 +1607,339 @@ public class Admin_dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jTextField7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField7KeyPressed
-        String input=jTextField7.getText();
-        if(input.length()==11){
-            jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/correct.gif")));
+    private void aadharKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aadharKeyPressed
+        String input = aadhar.getText();
+        if (input.length() == 12) {
+            Connection mycon = null;
+            Statement stmnt = null;
+            ResultSet myrs = null;
+            try {
+                mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
+                stmnt = mycon.createStatement();
+                long aadhar_number = Long.parseLong(aadhar.getText());
+                String query = "Select * from aadhar_db where aadhar_no = " + aadhar_number;
+                boolean aadhar_exists = false;
+                myrs = stmnt.executeQuery(query);
+                while (myrs.next()) {
+                    name.setText(myrs.getString("name"));
+//                gender = myrs.getString("gender");
+                    dob.setText(myrs.getString("dob"));
+                    state.setText(myrs.getString("state"));
+                    city.setText(myrs.getString("city"));
+                    address.setText(myrs.getString("address"));
+                    doj.setText(java.time.LocalDate.now().toString());
+                    aadhar_exists = true;
+//              email = myrs.getString("email_id");
+                    mobile.setText(String.valueOf(myrs.getLong("mobile_no")));
+                    designation1.getSelectedItem();
+                    jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/correct.gif")));
+                }
+                if (!aadhar_exists) {
+                    jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit.png")));
+                }
+            } catch (Exception exc) {
+                exc.printStackTrace();
+            } finally {
+                if (myrs != null) {
+                    try {
+                        myrs.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                if (stmnt != null) {
+                    try {
+                        stmnt.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        } else {
+            jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit.png")));
+            name.setText("To be displayed");
+//                gender = myrs.getString("gender");
+            dob.setText("To be displayed");
+            state.setText("To be displayed");
+            city.setText("To be displayed");
+            address.setText("To be displayed");
+            doj.setText("To be displayed");
+//                aadhar_exists = true;
+//              email = myrs.getString("email_id");
+            mobile.setText("To be displayed");
+//                designation1.getSelectedItem();
         }
-    }//GEN-LAST:event_jTextField7KeyPressed
+    }//GEN-LAST:event_aadharKeyPressed
+
+    private void contact_docActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contact_docActionPerformed
+        JOptionPane.showMessageDialog(this, "Name : Dr. Rakesh Sharma\nContact no. : 9874563214", "Dialog", JOptionPane.OK_OPTION);
+    }//GEN-LAST:event_contact_docActionPerformed
+    int is_admin1;
+    private void search_hospActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_hospActionPerformed
+        String choice = type.getSelectedItem().toString();
+        Hashtable<String, String> my_dict = new Hashtable<String, String>();
+        my_dict.put("Hospital", "req_from_hosp");
+        my_dict.put("Item", "item");
+        my_dict.put("Request ID", "request_id");
+        my_dict.put("Urgency Level", "urgency_level");
+        choice = my_dict.get(choice);
+        Connection mycon = null;
+        Statement stmnt = null;
+        Statement stmnt2 = null;
+        ResultSet myrs = null;
+        ResultSet myrs2 = null;
+        try {
+            mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
+            stmnt = mycon.createStatement();
+            stmnt2 = mycon.createStatement();
+            int patient_id;
+            String query;
+            if (choice.equals("request_id")) {
+                query = "Select * from requests where " + choice + " = " + searchbox.getText();
+            } else {
+                query = "Select * from requests where " + choice + " = \"" + searchbox.getText() + "\"";
+            }
+            myrs = stmnt.executeQuery(query);
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            for (int i = model.getRowCount() - 1; i >= 0; i--) {
+                model.removeRow(0);
+            }
+            while (myrs.next()) {
+                model.addRow(new Object[]{myrs.getInt("request_id"), myrs.getString("item"), myrs.getString("specifcation"), myrs.getString("req_from_hosp"), myrs.getString("urgency_level"), myrs.getString("request_status")});
+            }
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        } finally {
+            if (myrs != null) {
+                try {
+                    myrs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (stmnt != null) {
+                try {
+                    stmnt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }//GEN-LAST:event_search_hospActionPerformed
+
+    private void attend_reqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attend_reqActionPerformed
+        int request_id = Integer.parseInt(request_id2.getSelectedItem().toString());
+        Connection mycon = null;
+        Statement stmnt = null;
+        Statement stmnt2 = null;
+        Statement stmnt3 = null;
+        ResultSet myrs = null;
+        ResultSet myrs3 = null;
+        try {
+            mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
+            stmnt = mycon.createStatement();
+            stmnt2 = mycon.createStatement();
+            stmnt3 = mycon.createStatement();
+            String query = "Select * from requests where request_id = " + String.valueOf(request_id);
+            myrs = stmnt.executeQuery(query);
+            int myrs2 = 0;
+            boolean r = true;
+            while (myrs.next()) {
+                myrs3 = stmnt3.executeQuery("Select * from notification where request_id = " + String.valueOf(request_id));
+                if (myrs.getString("req_from_hosp").equals(hospital_name_displayed.getText())) {
+                    while (myrs3.next()) {
+                        if (myrs3.getInt("confirmed") == 1) {
+                            JOptionPane.showMessageDialog(this, "Request already attended", "Dialog", JOptionPane.ERROR_MESSAGE);
+                            r = false;
+                        } else {
+                            query = String.format("UPDATE `oPeO2hCFKh`.`notification` SET `confirmed` = '1' WHERE (`request_id` = '%d')", request_id);
+                            myrs2 = stmnt2.executeUpdate(query);
+                        }
+                    }
+                } else {
+                    while (myrs3.next()) {
+                        if (myrs3.getInt("fulfilled") == 1) {
+                            JOptionPane.showMessageDialog(this, "Request already attended", "Dialog", JOptionPane.ERROR_MESSAGE);
+                            r = false;
+                        } else {
+                            query = String.format("UPDATE `oPeO2hCFKh`.`notification` SET `fulfilled` = '1' WHERE (`request_id` = '%d')", request_id);
+                            myrs2 = stmnt2.executeUpdate(query);
+                            query = String.format("UPDATE `oPeO2hCFKh`.`requests` SET `fullfill_by_hosp` = '%s' WHERE (`request_id` = '%d')", hospital_name_displayed.getText(), request_id);
+                            myrs2 = stmnt2.executeUpdate(query);
+                        }
+                    }
+                }
+            }
+            if (myrs2 == 0 && r) {
+                JOptionPane.showMessageDialog(this, "Cannot attend Requests at this time", "Dialog", JOptionPane.ERROR_MESSAGE);
+            } else if (r) {
+                JOptionPane.showMessageDialog(this, "Attended successfull", "Dialog", JOptionPane.OK_OPTION);
+                cardLayout.show(pnlCards, "homeCard");
+            }
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        } finally {
+            if (myrs != null) {
+                try {
+                    myrs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (stmnt != null) {
+                try {
+                    stmnt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }//GEN-LAST:event_attend_reqActionPerformed
+
+    private void make_reqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_make_reqActionPerformed
+        Connection mycon = null;
+        Statement stmnt = null;
+        ResultSet myrs = null;
+        try {
+            mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
+            stmnt = mycon.createStatement();
+            String query = "Select * from requests";
+            myrs = stmnt.executeQuery(query);
+            int request_id = 100000;
+            while (myrs.next()) {
+                request_id++;
+            }
+            query = String.format("INSERT INTO `oPeO2hCFKh`.`requests` (`request_id`, `item`, `req_from_hosp`, `urgency_level`, `fullfill_by_hosp`, `request_status`, `specifcation`) VALUES ('%d', '%s', '%s', '%s', '', 'pending', '%S')", request_id, item1.getSelectedItem(), hospital_name_displayed.getText(), urgency_level1.getSelectedItem(), specs1.getText());
+            int myrs1 = stmnt.executeUpdate(query);
+            query = String.format("INSERT INTO `oPeO2hCFKh`.`notification` (`request_id`, `fulfilled`, `confirmed`) VALUES ('%d', '0', '0')", request_id);
+            int myrs2 = stmnt.executeUpdate(query);
+            if (myrs1 == 0 || myrs2 == 0) {
+                JOptionPane.showMessageDialog(this, "Fill all the details", "Dialog", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Request successfull", "Dialog", JOptionPane.OK_OPTION);
+                cardLayout.show(pnlCards, "homeCard");
+            }
+        } catch (Exception exc) {
+            JOptionPane.showMessageDialog(this, "Fill all the details", "Dialog", JOptionPane.ERROR_MESSAGE);
+            exc.printStackTrace();
+        } finally {
+            if (myrs != null) {
+                try {
+                    myrs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (stmnt != null) {
+                try {
+                    stmnt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }//GEN-LAST:event_make_reqActionPerformed
+
+    private void reg_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reg_userActionPerformed
+        if (admin_level.getText().equals("admin") && (designation1.getSelectedItem().equals("admin") || admin_level1.getSelectedItem().equals("super admin"))) {
+            JOptionPane.showMessageDialog(this, "You don't have permissions", "Dialog", JOptionPane.OK_OPTION);
+        } else {
+            Connection mycon = null;
+            Statement stmnt = null;
+            ResultSet myrs = null;
+            try {
+                mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
+                stmnt = mycon.createStatement();
+                String query = "Select * from users";
+//            boolean aadhar_number_exists = false;
+                myrs = stmnt.executeQuery(query);
+                int user_id = 100000;
+                int emp_id = 10000;
+                while (myrs.next()) {
+                    user_id++;
+                    emp_id++;
+                }
+                query = String.format("INSERT INTO `oPeO2hCFKh`.`staff_details` (`user_id`, `aadhar_number`, `emloyee_id`, `emp_name`, `emp_dob`, `emp_doj`, `emp_city`, `emp_state`, `emp_address`, `emp_mobile`, `designation`) VALUES ('%d', '%d', '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s')", user_id, Long.parseLong(aadhar.getText()), emp_id, name.getText(), dob.getText(), doj.getText(), city.getText(), state.getText(), address.getText(), Long.parseLong(mobile.getText()), designation1.getSelectedItem());
+                int myrs1 = stmnt.executeUpdate(query);
+                String user_name = name.getText() + String.valueOf(user_id);
+                String password = String.valueOf(emp_id);
+                int is_admin;
+                if (admin_level1.getSelectedItem().equals("Admin")) {
+                    is_admin = 1;
+                } else {
+                    is_admin = 0;
+                }
+                query = String.format("INSERT INTO `oPeO2hCFKh`.`users` (`user_id`, `user_name`, `password`, `is_admin`, `admin_level`) VALUES ('%d', '%s', '%s', '%d', '%s')", user_id, user_name, password, is_admin, admin_level1.getSelectedItem());
+                int myrs2 = stmnt.executeUpdate(query);
+                if (myrs1 == 0 || myrs2 == 0) {
+                    JOptionPane.showMessageDialog(this, "Fill all the details", "Dialog", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Details successfully saved", "Dialog", JOptionPane.OK_OPTION);
+                    cardLayout.show(pnlCards, "homeCard");
+                }
+            } catch (Exception exc) {
+                JOptionPane.showMessageDialog(this, "Aadhar number already registered", "Dialog", JOptionPane.ERROR_MESSAGE);
+                exc.printStackTrace();
+            } finally {
+                if (myrs != null) {
+                    try {
+                        myrs.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                if (stmnt != null) {
+                    try {
+                        stmnt.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_reg_userActionPerformed
+
+    private void reg_hospActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reg_hospActionPerformed
+        Connection mycon = null;
+        Statement stmnt = null;
+        ResultSet myrs = null;
+        try {
+            mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
+            stmnt = mycon.createStatement();
+            String query = "Select * from hospital_db";
+            myrs = stmnt.executeQuery(query);
+            int hospital_id = 100000;
+            while (myrs.next()) {
+                hospital_id++;
+            }
+            query = String.format("INSERT INTO `oPeO2hCFKh`.`hospital_db` (`hospital_id`, `hosp_name`, `hospital_address`) VALUES ('%d', '%s', '%s')", hospital_id, hospital_name.getText(), hospital_address.getText());
+            int myrs1 = stmnt.executeUpdate(query);
+            if (myrs1 == 0) {
+                JOptionPane.showMessageDialog(this, "Fill all the details", "Dialog", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Details successfully saved", "Dialog", JOptionPane.OK_OPTION);
+                cardLayout.show(pnlCards, "homeCard");
+            }
+        } catch (Exception exc) {
+            JOptionPane.showMessageDialog(this, "Fill all the details", "Dialog", JOptionPane.ERROR_MESSAGE);
+            exc.printStackTrace();
+        } finally {
+            if (myrs != null) {
+                try {
+                    myrs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (stmnt != null) {
+                try {
+                    stmnt.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }//GEN-LAST:event_reg_hospActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1501,8 +1949,8 @@ public class Admin_dashboard extends javax.swing.JFrame {
      * @throws java.lang.IllegalAccessException
      */
     public static void main(String[] args) throws InstantiationException, UnsupportedLookAndFeelException, ClassNotFoundException, IllegalAccessException {
-     
-        MaterialLookAndFeel lf=new MaterialLookAndFeel();
+
+        MaterialLookAndFeel lf = new MaterialLookAndFeel();
         UIManager.setLookAndFeel(lf);
         //</editor-fold>
 
@@ -1511,13 +1959,23 @@ public class Admin_dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField aadhar;
     private javax.swing.JButton addHospBtn;
     private javax.swing.JPanel addHospCard;
     private javax.swing.JButton addUserBtn;
     private javax.swing.JPanel addUserCard;
+    private javax.swing.JLabel address;
+    public javax.swing.JLabel admin_level;
+    private javax.swing.JComboBox<String> admin_level1;
     private javax.swing.JButton attReqBtn;
     private javax.swing.JPanel attReqCard;
+    private javax.swing.JButton attend_req;
+    private javax.swing.JLabel city;
+    private javax.swing.JButton contact_doc;
     public javax.swing.JLabel designation;
+    private javax.swing.JComboBox<String> designation1;
+    private javax.swing.JLabel dob;
+    private javax.swing.JLabel doj;
     public javax.swing.JLabel emp_aadhar;
     public javax.swing.JTextArea emp_address;
     public javax.swing.JLabel emp_city;
@@ -1529,19 +1987,11 @@ public class Admin_dashboard extends javax.swing.JFrame {
     public javax.swing.JLabel emp_user_id;
     private javax.swing.JButton homeBtn;
     private javax.swing.JPanel homeCard;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JTextField hospital_address;
+    private javax.swing.JTextField hospital_name;
+    public javax.swing.JLabel hospital_name_displayed;
+    private javax.swing.JComboBox<String> item1;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1551,7 +2001,6 @@ public class Admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1568,21 +2017,14 @@ public class Admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1598,22 +2040,29 @@ public class Admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JList<String> list;
     private javax.swing.JButton logoutBtn;
+    private javax.swing.JButton make_req;
     private javax.swing.JPopupMenu menu;
     private javax.swing.JButton mkReqBtn;
     private javax.swing.JPanel mkReqCard;
+    private javax.swing.JLabel mobile;
+    private javax.swing.JLabel name;
     private javax.swing.JPanel panel;
     private javax.swing.JPanel pnlCards;
     private javax.swing.JButton profileBtn;
     private javax.swing.JPanel profileCard;
+    private javax.swing.JButton reg_hosp;
+    private javax.swing.JButton reg_user;
+    private javax.swing.JComboBox<String> request_id2;
+    private javax.swing.JButton search_hosp;
+    private javax.swing.JTextField searchbox;
     private javax.swing.JPanel sidebar;
+    private javax.swing.JTextField specs1;
     private javax.swing.JTextField srchField;
+    private javax.swing.JLabel state;
+    private javax.swing.JComboBox<String> type;
+    private javax.swing.JComboBox<String> urgency_level1;
     private javax.swing.JButton viewReqBtn;
     private javax.swing.JPanel viewReqCard;
     // End of variables declaration//GEN-END:variables

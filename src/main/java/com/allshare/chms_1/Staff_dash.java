@@ -372,7 +372,7 @@ public class Staff_dash extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         homeCardLayout.setVerticalGroup(
             homeCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -501,7 +501,7 @@ public class Staff_dash extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(profileCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(emp_state, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)))
                     .addGroup(profileCardLayout.createSequentialGroup()
                         .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -706,7 +706,7 @@ public class Staff_dash extends javax.swing.JFrame {
         });
 
         insurer1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        insurer1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        insurer1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Max Bupa Health Insurance Company", "Apollo Munich Health Insurance Company", "Cigna TTK Health Insurance Company", "Religare Health Insurance Company", "ICICI Lombard Insurance Company", "New India Assurance Insurance Company", "Oriental Insurance Company Limited", "National Insurance Company", "Bajaj Allianz General Insurance" }));
 
         state1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         state1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Lakshadweep", "Madhya Pradesh", "Maharashtrah", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal" }));
@@ -720,54 +720,52 @@ public class Staff_dash extends javax.swing.JFrame {
                     .addGroup(regCardPnlLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(name1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(regCardPnlLayout.createSequentialGroup()
-                                    .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                                        .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                                        .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(regCardPnlLayout.createSequentialGroup()
-                                            .addGap(72, 72, 72)
-                                            .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(regCardPnlLayout.createSequentialGroup()
-                                                    .addComponent(yesRadio1)
-                                                    .addGap(58, 58, 58)
-                                                    .addComponent(noRadio1))
-                                                .addComponent(aadharNo1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, regCardPnlLayout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addGroup(regCardPnlLayout.createSequentialGroup()
-                                                    .addComponent(jRadioButton1)
-                                                    .addGap(58, 58, 58)
-                                                    .addComponent(jRadioButton2))
-                                                .addComponent(gender1)
-                                                .addComponent(dob1)
-                                                .addComponent(address1)
-                                                .addComponent(emailId1)
-                                                .addComponent(mobile1)
-                                                .addComponent(occupation1)
-                                                .addComponent(guardian1)
-                                                .addComponent(relationship1)
-                                                .addComponent(ref_doc1)
-                                                .addComponent(city1)
-                                                .addComponent(insurer1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(state1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                            .addGroup(regCardPnlLayout.createSequentialGroup()
+                                .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                                    .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                                    .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(regCardPnlLayout.createSequentialGroup()
+                                        .addGap(72, 72, 72)
+                                        .addComponent(yesRadio1)
+                                        .addGap(58, 58, 58)
+                                        .addComponent(noRadio1)
+                                        .addGap(192, 192, 192))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, regCardPnlLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(regCardPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(regCardPnlLayout.createSequentialGroup()
+                                                .addComponent(jRadioButton1)
+                                                .addGap(58, 58, 58)
+                                                .addComponent(jRadioButton2))
+                                            .addComponent(gender1)
+                                            .addComponent(dob1)
+                                            .addComponent(address1)
+                                            .addComponent(emailId1)
+                                            .addComponent(mobile1)
+                                            .addComponent(occupation1)
+                                            .addComponent(guardian1)
+                                            .addComponent(relationship1)
+                                            .addComponent(ref_doc1)
+                                            .addComponent(city1)
+                                            .addComponent(insurer1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(state1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(aadharNo1)
+                                            .addComponent(name1)))))
                             .addComponent(jLabel21)))
                     .addGroup(regCardPnlLayout.createSequentialGroup()
                         .addGap(328, 328, 328)
@@ -980,7 +978,7 @@ public class Staff_dash extends javax.swing.JFrame {
                                 .addComponent(jCheckBox12)
                                 .addGap(18, 18, 18)
                                 .addComponent(jCheckBox13)))
-                        .addGap(0, 33, Short.MAX_VALUE)))
+                        .addGap(0, 101, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         viewPatPnlLayout.setVerticalGroup(
@@ -1198,7 +1196,7 @@ public class Staff_dash extends javax.swing.JFrame {
         Statement stmnt = null;
         ResultSet myrs = null;
         try {
-            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "Asif@123");
+            mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
             stmnt = mycon.createStatement();
             aadhar_number = Long.parseLong(aadhar);
             String query = "Select * from aadhar_db where aadhar_no = " + aadhar_number;
@@ -1312,7 +1310,7 @@ public class Staff_dash extends javax.swing.JFrame {
         ResultSet myrs = null;
         ResultSet myrs2 = null;
         try {
-            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "Asif@123");
+            mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
             stmnt = mycon.createStatement();
             stmnt2 = mycon.createStatement();
             int patient_id;
@@ -1487,7 +1485,7 @@ public class Staff_dash extends javax.swing.JFrame {
         Statement stmnt = null;
         ResultSet myrs = null;
         try {
-            mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/chms", "root", "Asif@123");
+            mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
             stmnt = mycon.createStatement();
             String query = "Select * from patient_details";
 //            boolean aadhar_number_exists = false;
@@ -1496,9 +1494,9 @@ public class Staff_dash extends javax.swing.JFrame {
             while (myrs.next()) {
                 patient_id++;
             }
-            query = String.format("INSERT INTO `chms`.`patient_personal_details` (`pateint_id`, `aadhar_number`, `name`, `gender`, `dob`, `address`, `email_id`, `mobile_no`, `state`, `city`) VALUES ('%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s')", patient_id, aadhar_number, name, gender, dob, address, email, mobile_no, state, city);
+            query = String.format("INSERT INTO `oPeO2hCFKh`.`patient_personal_details` (`pateint_id`, `aadhar_number`, `name`, `gender`, `dob`, `address`, `email_id`, `mobile_no`, `state`, `city`) VALUES ('%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s')", patient_id, aadhar_number, name, gender, dob, address, email, mobile_no, state, city);
             int myrs1 = stmnt.executeUpdate(query);
-            query = String.format("INSERT INTO `chms`.`patient_details` (`patient_id`, `occupation`, `guardian`, `relationship`, `insurance`, `insurer`, `referring_doctor`) VALUES ('%d', '%s', '%s', '%s', '%d', '%s', '%s')", patient_id, occupation, guardian, relationship, insurance, insurer, ref_doc);
+            query = String.format("INSERT INTO `oPeO2hCFKh`.`patient_details` (`patient_id`, `occupation`, `guardian`, `relationship`, `insurance`, `insurer`, `referring_doctor`) VALUES ('%d', '%s', '%s', '%s', '%d', '%s', '%s')", patient_id, occupation, guardian, relationship, insurance, insurer, ref_doc);
             int myrs2 = stmnt.executeUpdate(query);
             if (myrs1 == 0) {
                 JOptionPane.showMessageDialog(this, "Fill all the details", "Dialog", JOptionPane.ERROR_MESSAGE);
@@ -1528,8 +1526,7 @@ public class Staff_dash extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.removeRow(0);
+        
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
