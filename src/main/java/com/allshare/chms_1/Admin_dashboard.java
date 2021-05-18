@@ -532,63 +532,63 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Request ID", "Item", "Hospital", "Urgency Level", "Request Status"
+                "Request ID", "Item", "Specification", "Hospital", "Urgency Level", "Request Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, true, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -656,7 +656,6 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jLabel10.setText("Enter Request ID");
 
         request_id2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        request_id2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         attend_req.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         attend_req.setText("Attend Request");
@@ -668,66 +667,66 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Request ID", "Item", "Hospital", "Verified"
+                "Request ID", "Item", "Specification", "Hospital", "Verified"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -746,22 +745,29 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Request Id", "Item", "Urgency Level", "Fulfilled", "Confirmed"
+                "Request Id", "Item", "Specification", "Urgency Level", "Fulfilled", "Confirmed"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane5.setViewportView(jTable3);
@@ -1518,7 +1524,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                         if (myrs.getInt("confirmed") == 0) {
                             isConfirmed = false;
                         }
-                        model1.addRow(new Object[]{String.valueOf(myrs.getInt("request_id")), myrs2.getString("item"), myrs2.getString("specifcation"), myrs2.getString("urgency_level"), isFulfilled, isConfirmed});
+                        model1.addRow(new Object[]{String.valueOf(myrs.getInt("request_id")), myrs2.getString("item"), myrs2.getString("specification"), myrs2.getString("urgency_level"), isFulfilled, isConfirmed});
                     }
                 } else {
                     query = "Select * from requests where request_id = " + String.valueOf(myrs.getInt("request_id"));
@@ -1531,7 +1537,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
 
                             int myrs3 = stmnt3.executeUpdate(query);
                         }
-                        model2.addRow(new Object[]{String.valueOf(myrs.getInt("request_id")), myrs2.getString("item"), myrs2.getString("specifcation"), myrs2.getString("req_from_hosp"), true});
+                        model2.addRow(new Object[]{String.valueOf(myrs.getInt("request_id")), myrs2.getString("item"), myrs2.getString("specification"), myrs2.getString("req_from_hosp"), true});
                     }
                 }
             }
@@ -1708,7 +1714,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
                 model.removeRow(0);
             }
             while (myrs.next()) {
-                model.addRow(new Object[]{myrs.getInt("request_id"), myrs.getString("item"), myrs.getString("specifcation"), myrs.getString("req_from_hosp"), myrs.getString("urgency_level"), myrs.getString("request_status")});
+                model.addRow(new Object[]{myrs.getInt("request_id"), myrs.getString("item"), myrs.getString("specification"), myrs.getString("req_from_hosp"), myrs.getString("urgency_level"), myrs.getString("request_status")});
             }
         } catch (Exception exc) {
             exc.printStackTrace();
@@ -1812,7 +1818,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
             while (myrs.next()) {
                 request_id++;
             }
-            query = String.format("INSERT INTO `oPeO2hCFKh`.`requests` (`request_id`, `item`, `req_from_hosp`, `urgency_level`, `fullfill_by_hosp`, `request_status`, `specifcation`) VALUES ('%d', '%s', '%s', '%s', '', 'pending', '%S')", request_id, item1.getSelectedItem(), hospital_name_displayed.getText(), urgency_level1.getSelectedItem(), specs1.getText());
+            query = String.format("INSERT INTO `oPeO2hCFKh`.`requests` (`request_id`, `item`, `req_from_hosp`, `urgency_level`, `fullfill_by_hosp`, `request_status`, `specification`) VALUES ('%d', '%s', '%s', '%s', '', 'pending', '%S')", request_id, item1.getSelectedItem(), hospital_name_displayed.getText(), urgency_level1.getSelectedItem(), specs1.getText());
             int myrs1 = stmnt.executeUpdate(query);
             query = String.format("INSERT INTO `oPeO2hCFKh`.`notification` (`request_id`, `fulfilled`, `confirmed`) VALUES ('%d', '0', '0')", request_id);
             int myrs2 = stmnt.executeUpdate(query);

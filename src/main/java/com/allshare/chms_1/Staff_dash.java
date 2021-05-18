@@ -26,12 +26,14 @@ public class Staff_dash extends javax.swing.JFrame {
 
     CardLayout cardLayout;
     private final DefaultListModel mod;
+    
 
     /**
      * Creates new form Staff_dash
      */
     public Staff_dash() {
         initComponents();
+        
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
         this.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
@@ -40,6 +42,7 @@ public class Staff_dash extends javax.swing.JFrame {
         mod = new DefaultListModel();
         list.setModel(mod);
         System.out.println("--  " + this.getPreferredSize());
+        
     }
 
     /**
@@ -74,6 +77,8 @@ public class Staff_dash extends javax.swing.JFrame {
                 jLabel3 = new javax.swing.JLabel();
                 jLabel2 = new javax.swing.JLabel();
                 jButton1 = new javax.swing.JButton();
+                jScrollPane4 = new javax.swing.JScrollPane();
+                textpane = new javax.swing.JTextPane();
                 profileCard = new javax.swing.JPanel();
                 jLabel4 = new javax.swing.JLabel();
                 jLabel5 = new javax.swing.JLabel();
@@ -165,6 +170,11 @@ public class Staff_dash extends javax.swing.JFrame {
                     String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
                     public int getSize() { return strings.length; }
                     public String getElementAt(int i) { return strings[i]; }
+                });
+                list.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+                    public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                        listValueChanged(evt);
+                    }
                 });
                 jScrollPane1.setViewportView(list);
 
@@ -359,6 +369,10 @@ public class Staff_dash extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton1.setText("Contact a Doctor");
 
+        textpane.setEditable(false);
+        textpane.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Solution for <Symptom>", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18), new java.awt.Color(0, 102, 255))); // NOI18N
+        jScrollPane4.setViewportView(textpane);
+
         javax.swing.GroupLayout homeCardLayout = new javax.swing.GroupLayout(homeCard);
         homeCard.setLayout(homeCardLayout);
         homeCardLayout.setHorizontalGroup(
@@ -371,7 +385,8 @@ public class Staff_dash extends javax.swing.JFrame {
                     .addGroup(homeCardLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane4))
                 .addContainerGap(92, Short.MAX_VALUE))
         );
         homeCardLayout.setVerticalGroup(
@@ -385,7 +400,9 @@ public class Staff_dash extends javax.swing.JFrame {
                 .addGroup(homeCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jButton1))
-                .addContainerGap(269, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         pnlCards.add(homeCard, "homeCard");
@@ -1529,6 +1546,13 @@ public class Staff_dash extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
+    private void listValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listValueChanged
+        if(list.getSelectedValue().equals("Fever")){
+            JOptionPane.showMessageDialog(this, "Work");
+            textpane.setText("Symptoms here...........\nSymptoms here...........\nSymptoms here...........\nSymptoms here...........\nSymptoms here...........\nSymptoms here...........\nSymptoms here...........\nSymptoms here...........\nSymptoms here...........\nSymptoms here...........\nSymptoms here...........\nSymptoms here...........\n");
+        }
+    }//GEN-LAST:event_listValueChanged
+
     /**
      * @param args the command line arguments
      */
@@ -1543,6 +1567,7 @@ public class Staff_dash extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Staff_dash().setVisible(true);
@@ -1628,6 +1653,7 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
@@ -1652,6 +1678,7 @@ public class Staff_dash extends javax.swing.JFrame {
     private javax.swing.JButton srchBtn;
     private javax.swing.JTextField srchField;
     private javax.swing.JComboBox<String> state1;
+    private javax.swing.JTextPane textpane;
     private javax.swing.JButton viewBtn;
     private javax.swing.JPanel viewPatPnl;
     private javax.swing.JRadioButton yesRadio1;

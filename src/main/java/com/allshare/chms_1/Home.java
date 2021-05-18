@@ -142,6 +142,7 @@ public class Home extends javax.swing.JFrame {
         Connection mycon = null;
         Statement stmnt = null;
         ResultSet myrs = null;
+
         try {
             mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
             stmnt = mycon.createStatement();
@@ -149,7 +150,9 @@ public class Home extends javax.swing.JFrame {
 
             myrs = stmnt.executeQuery(query);
             boolean hospital_exists = false;
-
+            if (h_id==null) {
+                hospital_exists = true;
+            }
             while (myrs.next()) {
                 hospital_exists = true;
                 Staff_login sl = new Staff_login();
@@ -200,10 +203,14 @@ public class Home extends javax.swing.JFrame {
 
                 myrs = stmnt.executeQuery(query);
                 boolean hospital_exists = false;
-
+                if (h_id==null) {
+                    hospital_exists = true;
+                }
                 while (myrs.next()) {
                     hospital_exists = true;
                     al.hospital = myrs.getString("hosp_name");
+                    al.hosp_name.setText(myrs.getString("hosp_name"));
+                    al.hosp_addr.setText(myrs.getString("hospital_address"));
                     al.setVisible(true);
                     this.dispose();
                 }
