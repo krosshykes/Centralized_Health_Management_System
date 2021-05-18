@@ -193,7 +193,7 @@ public class Admin_login extends javax.swing.JFrame {
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameActionPerformed
-String hospital;
+    String hospital;
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         Connection mycon = null;
         Statement stmnt = null;
@@ -227,42 +227,40 @@ String hospital;
                 user_id = myrs.getInt("user_id");
                 String entered_password = password.getText().toString();
                 if (user_password.equals(entered_password)) {
-                    if(!myrs.getBoolean("is_admin")){
+                    if (!myrs.getBoolean("is_admin")) {
                         JOptionPane.showMessageDialog(this, "You don't have permissions", "Dialog", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        myrs2 = stmnt2.executeQuery("select * from staff_details where user_id = \"" + user_id + "\"");
+
+                        while (myrs2.next()) {
+                            Admin_dashboard ad = new Admin_dashboard();
+                            name_to_display = myrs2.getString("emp_name");
+                            designation_to_display = myrs2.getString("designation");
+                            aadhar = myrs2.getLong("aadhar_number");
+                            dob = myrs2.getString("emp_dob");
+                            doj = myrs2.getString("emp_doj");
+                            city = myrs2.getString("emp_city");
+                            state = myrs2.getString("emp_state");
+                            address = myrs2.getString("emp_address");
+                            mobile = myrs2.getLong("emp_mobile");
+                            ad.hospital_name_displayed.setText(hospital);
+                            ad.emp_name.setText(name_to_display);
+                            ad.designation.setText(designation_to_display);
+                            ad.emp_aadhar.setText(String.valueOf(aadhar));
+                            ad.emp_dob.setText(dob);
+                            ad.emp_doj.setText(doj);
+                            ad.emp_city.setText(city);
+                            ad.emp_state.setText(state);
+                            ad.emp_address.setText(address);
+                            ad.emp_mobile.setText(String.valueOf(mobile));
+                            ad.emp_user_id.setText(String.valueOf(user_id));
+                            ad.admin_level.setText(myrs.getString("admin_level"));
+                            ad.is_admin1 = myrs.getInt("is_admin");
+                            ad.setVisible(true);
+                            this.dispose();
+                        }
                     }
-                    else{
-                    myrs2 = stmnt2.executeQuery("select * from staff_details where user_id = \"" + user_id + "\"");
-                    
-                    while (myrs2.next()) {
-                        Admin_dashboard ad = new Admin_dashboard();
-                        name_to_display = myrs2.getString("emp_name");
-                        designation_to_display = myrs2.getString("designation");
-                        aadhar = myrs2.getLong("aadhar_number");
-                        dob = myrs2.getString("emp_dob");
-                        doj = myrs2.getString("emp_doj");
-                        city = myrs2.getString("emp_city");
-                        state = myrs2.getString("emp_state");
-                        address = myrs2.getString("emp_address");
-                        mobile = myrs2.getLong("emp_mobile");
-                        ad.hospital_name_displayed.setText(hospital);
-                        ad.emp_name.setText(name_to_display);
-                        ad.designation.setText(designation_to_display);
-                        ad.emp_aadhar.setText(String.valueOf(aadhar));
-                        ad.emp_dob.setText(dob);
-                        ad.emp_doj.setText(doj);
-                        ad.emp_city.setText(city);
-                        ad.emp_state.setText(state);
-                        ad.emp_address.setText(address);
-                        ad.emp_mobile.setText(String.valueOf(mobile));
-                        ad.emp_user_id.setText(String.valueOf(user_id));
-                        ad.admin_level.setText(myrs.getString("admin_level"));
-                        ad.is_admin1 = myrs.getInt("is_admin");
-                        ad.setVisible(true);
-                        this.dispose();
-                    }
-                }
-                }
-                else {
+                } else {
                     JOptionPane.showMessageDialog(this, "wrong password", "Dialog", JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -286,31 +284,31 @@ String hospital;
                     Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        
-    }
+
+        }
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordActionPerformed
-boolean usernameflag=false;
-boolean passwordflag=false;
+    boolean usernameflag = false;
+    boolean passwordflag = false;
     private void usernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameKeyPressed
-        if(!usernameflag){
+        if (!usernameflag) {
             username.setText("");
-            usernameflag=true;
+            usernameflag = true;
         }
     }//GEN-LAST:event_usernameKeyPressed
 
     private void passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyPressed
-        if(!passwordflag){
+        if (!passwordflag) {
             password.setText("");
-            passwordflag=true;
+            passwordflag = true;
         }
     }//GEN-LAST:event_passwordKeyPressed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        Home hom=new Home();
+        Home hom = new Home();
         hom.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backBtnActionPerformed

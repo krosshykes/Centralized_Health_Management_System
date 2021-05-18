@@ -191,43 +191,43 @@ public class Home extends javax.swing.JFrame {
         Connection mycon = null;
         Statement stmnt = null;
         ResultSet myrs = null;
-        if(!(h_id==null)){
-        try {
-            Admin_login al = new Admin_login();
-            mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
-            stmnt = mycon.createStatement();
-            String query = "Select * from hospital_db where hospital_id = " + h_id;
+        if (!(h_id == null)) {
+            try {
+                Admin_login al = new Admin_login();
+                mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
+                stmnt = mycon.createStatement();
+                String query = "Select * from hospital_db where hospital_id = " + h_id;
 
-            myrs = stmnt.executeQuery(query);
-            boolean hospital_exists = false;
+                myrs = stmnt.executeQuery(query);
+                boolean hospital_exists = false;
 
-            while (myrs.next()) {
-                hospital_exists = true;
-                al.hospital=myrs.getString("hosp_name");
-                al.setVisible(true);
-                this.dispose();
-            }
-            if (!hospital_exists) {
-                JOptionPane.showMessageDialog(this, "Hospital Id does not exist", "Dialog", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (Exception exc) {
-            exc.printStackTrace();
-        } finally {
-            if (myrs != null) {
-                try {
-                    myrs.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                while (myrs.next()) {
+                    hospital_exists = true;
+                    al.hospital = myrs.getString("hosp_name");
+                    al.setVisible(true);
+                    this.dispose();
+                }
+                if (!hospital_exists) {
+                    JOptionPane.showMessageDialog(this, "Hospital Id does not exist", "Dialog", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (Exception exc) {
+                exc.printStackTrace();
+            } finally {
+                if (myrs != null) {
+                    try {
+                        myrs.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                if (stmnt != null) {
+                    try {
+                        stmnt.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
-            if (stmnt != null) {
-                try {
-                    stmnt.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Staff_login.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
         }
     }//GEN-LAST:event_adminActionPerformed
 

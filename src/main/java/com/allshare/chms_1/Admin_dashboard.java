@@ -838,10 +838,10 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jLabel21.setText("Add User");
 
         designation1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        designation1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "doctor", "surgeon" }));
+        designation1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Doctor", "Surgeon", "Nurse", "Admin", "Hospital admin" }));
 
         admin_level1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        admin_level1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "super admin" }));
+        admin_level1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "staff", "admin", "super admin" }));
         admin_level1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 admin_level1ActionPerformed(evt);
@@ -1205,7 +1205,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jLabel31.setText("Item");
 
         item1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        item1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        item1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Liver", "Kidney", "Pancreas", "Heart", "Lung", "Intestine", "Cornea", "Middle ear", "Skin", "Bone", "Bone marrow", "Heart valves", "Connective tissue", "Blood", "Plasma" }));
 
         specs1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         specs1.setText("Keyword");
@@ -1220,7 +1220,7 @@ public class Admin_dashboard extends javax.swing.JFrame {
         jLabel34.setText("Urgency Level");
 
         urgency_level1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        urgency_level1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        urgency_level1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Low", "Medium", "High" }));
 
         make_req.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         make_req.setText("Make Request");
@@ -1411,10 +1411,10 @@ public class Admin_dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_profileBtnActionPerformed
 
     private void addHospBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addHospBtnActionPerformed
-        if(admin_level.getText().equals("super admin"))
-        cardLayout.show(pnlCards, "registerCard");
-        else{
-        JOptionPane.showMessageDialog(this, "You don't have permissions", "Dialog", JOptionPane.ERROR_MESSAGE);
+        if (admin_level.getText().equals("super admin"))
+            cardLayout.show(pnlCards, "registerCard");
+        else {
+            JOptionPane.showMessageDialog(this, "You don't have permissions", "Dialog", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_addHospBtnActionPerformed
 
@@ -1490,11 +1490,13 @@ public class Admin_dashboard extends javax.swing.JFrame {
         ResultSet myrs2 = null;
         cardLayout.show(pnlCards, "attReqCard");
         DefaultTableModel model1 = (DefaultTableModel) jTable3.getModel();
-        for(int i = model1.getRowCount()-1;i>=0;i--)
-                        model1.removeRow(i);
+        for (int i = model1.getRowCount() - 1; i >= 0; i--) {
+            model1.removeRow(i);
+        }
         DefaultTableModel model2 = (DefaultTableModel) jTable2.getModel();
-        for(int i = model2.getRowCount()-1;i>=0;i--)
-                        model2.removeRow(i);
+        for (int i = model2.getRowCount() - 1; i >= 0; i--) {
+            model2.removeRow(i);
+        }
         request_id2.removeAllItems();
         try {
             mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
@@ -1504,35 +1506,36 @@ public class Admin_dashboard extends javax.swing.JFrame {
             String query = "Select * from notification";
             myrs = stmnt.executeQuery(query);
             while (myrs.next()) {
-                if(myrs.getInt("fulfilled")==0||myrs.getInt("confirmed")==0){
+                if (myrs.getInt("fulfilled") == 0 || myrs.getInt("confirmed") == 0) {
                     request_id2.addItem(String.valueOf(myrs.getInt("request_id")));
-                    query = "Select * from requests where request_id = "+String.valueOf(myrs.getInt("request_id")); 
+                    query = "Select * from requests where request_id = " + String.valueOf(myrs.getInt("request_id"));
                     myrs2 = stmnt2.executeQuery(query);
-                    while(myrs2.next()){
-                    boolean isConfirmed = true, isFulfilled = true;
-                    if(myrs.getInt("fulfilled")==0)
-                        isFulfilled = false;
-                    if(myrs.getInt("confirmed")==0)
-                        isConfirmed = false;
-                    model1.addRow(new Object[]{String.valueOf(myrs.getInt("request_id")),myrs2.getString("item"),myrs2.getString("specifcation"),myrs2.getString("urgency_level"),isFulfilled , isConfirmed});
-                }
-                }
-                else{
-                    query = "Select * from requests where request_id = "+String.valueOf(myrs.getInt("request_id")); 
-                    myrs2 = stmnt2.executeQuery(query);
-                    
-                    while(myrs2.next()){
-                        int request_id = myrs.getInt("request_id");
-                        if(myrs2.getString("request_status").equals("pending")){
-                        query = String.format("UPDATE `oPeO2hCFKh`.`requests` SET `request_status` = 'fulfilled' WHERE (`request_id` = '%d')",request_id);
-                            
-                        int myrs3 = stmnt3.executeUpdate(query);
+                    while (myrs2.next()) {
+                        boolean isConfirmed = true, isFulfilled = true;
+                        if (myrs.getInt("fulfilled") == 0) {
+                            isFulfilled = false;
                         }
-                    model2.addRow(new Object[]{String.valueOf(myrs.getInt("request_id")),myrs2.getString("item"),myrs2.getString("specifcation"),myrs2.getString("req_from_hosp"),true});
-                }
+                        if (myrs.getInt("confirmed") == 0) {
+                            isConfirmed = false;
+                        }
+                        model1.addRow(new Object[]{String.valueOf(myrs.getInt("request_id")), myrs2.getString("item"), myrs2.getString("specifcation"), myrs2.getString("urgency_level"), isFulfilled, isConfirmed});
+                    }
+                } else {
+                    query = "Select * from requests where request_id = " + String.valueOf(myrs.getInt("request_id"));
+                    myrs2 = stmnt2.executeQuery(query);
+
+                    while (myrs2.next()) {
+                        int request_id = myrs.getInt("request_id");
+                        if (myrs2.getString("request_status").equals("pending")) {
+                            query = String.format("UPDATE `oPeO2hCFKh`.`requests` SET `request_status` = 'fulfilled' WHERE (`request_id` = '%d')", request_id);
+
+                            int myrs3 = stmnt3.executeUpdate(query);
+                        }
+                        model2.addRow(new Object[]{String.valueOf(myrs.getInt("request_id")), myrs2.getString("item"), myrs2.getString("specifcation"), myrs2.getString("req_from_hosp"), true});
+                    }
                 }
             }
-            
+
         } catch (Exception exc) {
             exc.printStackTrace();
         } finally {

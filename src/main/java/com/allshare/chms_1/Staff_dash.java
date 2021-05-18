@@ -655,7 +655,6 @@ public class Staff_dash extends javax.swing.JFrame {
         mobile1.setBackground(new java.awt.Color(255, 255, 255));
         mobile1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
-        occupation1.setEditable(false);
         occupation1.setBackground(new java.awt.Color(255, 255, 255));
         occupation1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
@@ -927,7 +926,7 @@ public class Staff_dash extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Type", "Info"
+                "S.No.", "Type", "Info"
             }
         ));
         jScrollPane3.setViewportView(jTable1);
@@ -1215,7 +1214,7 @@ public class Staff_dash extends javax.swing.JFrame {
                 name1.setText(name);
                 gender1.setText(gender);
                 dob1.setText(dob);
-                state1.addItem(state);
+                state1.setSelectedItem(state);
                 city1.setText(city);
                 address1.setText(address);
                 emailId1.setText(email);
@@ -1264,7 +1263,7 @@ public class Staff_dash extends javax.swing.JFrame {
         mobile1.setEditable(true);
         state1.setEnabled(true);
 
-        
+
     }//GEN-LAST:event_noRadio1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -1309,6 +1308,10 @@ public class Staff_dash extends javax.swing.JFrame {
         Statement stmnt2 = null;
         ResultSet myrs = null;
         ResultSet myrs2 = null;
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        for (int i = model.getRowCount() - 1; i >= 0; i--) {
+            model.removeRow(0);
+        }
         try {
             mycon = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/oPeO2hCFKh", "oPeO2hCFKh", "i1USfNINPn");
             stmnt = mycon.createStatement();
@@ -1341,7 +1344,7 @@ public class Staff_dash extends javax.swing.JFrame {
                     insurer = myrs2.getString("insurer");
                     ref_doc = myrs2.getString("referring_doctor");
                 }
-                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
                 j1 = jCheckBox1.isSelected();
                 j2 = jCheckBox2.isSelected();
                 j3 = jCheckBox3.isSelected();
@@ -1359,9 +1362,6 @@ public class Staff_dash extends javax.swing.JFrame {
 //                for (int i = rowCount - 1; i >= 0; i--) {
 //                    jTable1.removeRow(i);
 //                }
-                for (int i = model.getRowCount() - 1; i >= 0; i--) {
-                    model.removeRow(0);
-                }
 
                 if (!(j1 || j2 || j3 || j4 || j5 || j6 || j7 || j8 || j9 || j10 || j11 || j12 || j13)) {
                     model.addRow(new Object[]{sno, "Name", name});
@@ -1494,7 +1494,7 @@ public class Staff_dash extends javax.swing.JFrame {
             while (myrs.next()) {
                 patient_id++;
             }
-            query = String.format("INSERT INTO `oPeO2hCFKh`.`patient_personal_details` (`pateint_id`, `aadhar_number`, `name`, `gender`, `dob`, `address`, `email_id`, `mobile_no`, `state`, `city`) VALUES ('%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s')", patient_id, aadhar_number, name, gender, dob, address, email, mobile_no, state, city);
+            query = String.format("INSERT INTO `oPeO2hCFKh`.`patient_personal_details` (`patient_id`, `aadhar_number`, `name`, `gender`, `dob`, `address`, `email_id`, `mobile_no`, `state`, `city`) VALUES ('%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s')", patient_id, aadhar_number, name, gender, dob, address, email, mobile_no, state, city);
             int myrs1 = stmnt.executeUpdate(query);
             query = String.format("INSERT INTO `oPeO2hCFKh`.`patient_details` (`patient_id`, `occupation`, `guardian`, `relationship`, `insurance`, `insurer`, `referring_doctor`) VALUES ('%d', '%s', '%s', '%s', '%d', '%s', '%s')", patient_id, occupation, guardian, relationship, insurance, insurer, ref_doc);
             int myrs2 = stmnt.executeUpdate(query);
@@ -1526,7 +1526,7 @@ public class Staff_dash extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        
+
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
